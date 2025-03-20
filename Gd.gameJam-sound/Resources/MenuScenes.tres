@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MenuScenes" load_steps=2 format=3 uid="uid://c8a4km21ysd1l"]
+
+[ext_resource type="Script" uid="uid://bajbpu76262wp" path="res://LMS/Scripts/ResourceScripts/MenuScenesResource.gd" id="1_umyfp"]
+
+[resource]
+script = ExtResource("1_umyfp")
+Scenes = {}
+metadata/_custom_type_script = "uid://bajbpu76262wp"

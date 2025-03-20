@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://hj1jx8y8su4c"]
+
+[ext_resource type="FontFile" uid="uid://4kf6n4h8mq6y" path="res://LMS/Creative Assets/Theme/KGHAPPY.ttf" id="1_kuqjh"]
+[ext_resource type="StyleBox" uid="uid://cm8eu6rupwvni" path="res://LMS/Creative Assets/Theme/Btn_Focus.tres" id="1_xj6u2"]
+[ext_resource type="StyleBox" uid="uid://dg4otmi01s5qv" path="res://LMS/Creative Assets/Theme/Btn_Hover.tres" id="2_6q8mn"]
+[ext_resource type="StyleBox" uid="uid://cbji7qmmsa26u" path="res://LMS/Creative Assets/Theme/Btn_Normal.tres" id="3_qea6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clv0t"]
+bg_color = Color(0.737255, 0.929412, 0.964706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8owa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.184314, 0.0941176, 0.278431, 0.764706)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[resource]
+default_font = ExtResource("1_kuqjh")
+default_font_size = 14
+BackgroundContainer/base_type = &"PanelContainer"
+BackgroundContainer/styles/panel = SubResource("StyleBoxFlat_clv0t")
+Button/colors/font_color = Color(0.737255, 0.929412, 0.964706, 1)
+Button/colors/font_focus_color = Color(0.184314, 0.0941176, 0.278431, 1)
+Button/colors/font_hover_color = Color(0.184314, 0.0941176, 0.278431, 1)
+Button/styles/focus = ExtResource("1_xj6u2")
+Button/styles/hover = ExtResource("2_6q8mn")
+Button/styles/normal = ExtResource("3_qea6h")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/colors/font_color = Color(0.184314, 0.0941176, 0.278431, 1)
+HeaderLarge/font_sizes/font_size = 36
+HeaderSmall/base_type = &"Label"
+HeaderSmall/colors/font_color = Color(0.384314, 0.278431, 0.388235, 1)
+HeaderSmall/font_sizes/font_size = 20
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_m8owa")
