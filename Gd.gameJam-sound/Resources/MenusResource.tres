@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MenusResource" load_steps=4 format=3 uid="uid://c8a4km21ysd1l"]
+
+[ext_resource type="PackedScene" uid="uid://g6r5rxpgx4d7" path="res://LMS/Scenes/Menus/StartMenu.tscn" id="1_skfkk"]
+[ext_resource type="Script" uid="uid://bajbpu76262wp" path="res://LMS/Scripts/Resource_Scripts/MenuScenesResource.gd" id="1_umyfp"]
+[ext_resource type="PackedScene" uid="uid://c1fxs4gs6awk0" path="res://LMS/Scenes/Menus/LevelSelectMenu.tscn" id="2_71qdk"]
+
+[resource]
+script = ExtResource("1_umyfp")
+Scenes = Dictionary[String, PackedScene]({
+"LevelSelect": ExtResource("2_71qdk"),
+"Start": ExtResource("1_skfkk")
+})
+metadata/_custom_type_script = "uid://bajbpu76262wp"

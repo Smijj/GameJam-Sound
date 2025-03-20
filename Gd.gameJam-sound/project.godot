@@ -21,6 +21,14 @@ StateManager="*res://LMS/Scripts/Managers/StateManager.gd"
 MenuManager="*res://LMS/Scripts/Managers/MenuManager.gd"
 AudioHandler="*res://LMS/Scripts/Managers/AudioHandler.gd"
 SignalBus="*res://LMS/Scripts/Managers/SignalBus.gd"
+GameManager="*res://LMS/Scripts/Managers/GameManager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [file_customization]
 
@@ -34,6 +42,10 @@ folder_colors={
 [global_group]
 
 Player=""
+
+[gui]
+
+theme/custom="uid://hj1jx8y8su4c"
 
 [input]
 

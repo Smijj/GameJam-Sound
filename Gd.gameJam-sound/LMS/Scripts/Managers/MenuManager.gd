@@ -1,15 +1,15 @@
 extends Node
 
-const _MenuScenesResource: MenuScenes = preload("res://Resources/MenuScenes.tres")
-var _Scenes: Dictionary = {}
+const _MenusResource: MenusResource = preload("res://Resources/MenusResource.tres")
+var _Scenes: Dictionary[String, CanvasLayer] = {}
 
 var _CurrentMenu:String = ""
 
 func _init() -> void:
 	# Preload all the packed menu scenes
-	for key in _MenuScenesResource.Scenes.keys():
-		var value:PackedScene = _MenuScenesResource.Scenes[key]
-		var newScene:CanvasLayer = value.instantiate()
+	for key in _MenusResource.Scenes.keys():
+		var menuScene:PackedScene = _MenusResource.Scenes[key]
+		var newScene:CanvasLayer = menuScene.instantiate()
 		if newScene == null: continue
 		 
 		newScene.visible = false

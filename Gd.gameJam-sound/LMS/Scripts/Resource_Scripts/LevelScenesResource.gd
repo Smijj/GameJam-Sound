@@ -1,4 +1,4 @@
-class_name LevelScenes
+class_name LevelsResource
 extends Resource
 
 @export var Levels: Array[LevelData] = []

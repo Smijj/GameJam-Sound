@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyqwxtf2ohkmk"]
+
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="1_an2dp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2idcr"]
+size = Vector2(996, 48)
+
+[sub_resource type="Gradient" id="Gradient_nkohr"]
+colors = PackedColorArray(0.172521, 0.159557, 0.149538, 1, 0.358419, 0.718687, 0.537319, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iaf3o"]
+noise_type = 3
+frequency = 0.0103
+fractal_type = 3
+fractal_octaves = 4
+fractal_lacunarity = 2.24
+fractal_gain = 0.045
+fractal_ping_pong_strength = 2.08
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wlwcb"]
+width = 1000
+height = 50
+color_ramp = SubResource("Gradient_nkohr")
+noise = SubResource("FastNoiseLite_iaf3o")
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Speaker" parent="." instance=ExtResource("1_an2dp")]
+position = Vector2(208, -46)
+rotation = -1.57079
+
+[node name="Speaker2" parent="." instance=ExtResource("1_an2dp")]
+position = Vector2(-981, -230)
+rotation = 1.0472
+
+[node name="Speaker3" parent="." instance=ExtResource("1_an2dp")]
+position = Vector2(-743, 395)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(333, 97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_2idcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+texture = SubResource("NoiseTexture2D_wlwcb")
+
+[node name="Ground5" type="StaticBody2D" parent="."]
+position = Vector2(-1062, 340)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5"]
+shape = SubResource("RectangleShape2D_2idcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground5"]
+texture = SubResource("NoiseTexture2D_wlwcb")
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2(36, -213)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3"]
+shape = SubResource("RectangleShape2D_2idcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground3"]
+scale = Vector2(0.996, 1)
+texture = SubResource("NoiseTexture2D_wlwcb")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(-919, -150)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("RectangleShape2D_2idcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+texture = SubResource("NoiseTexture2D_wlwcb")
+
+[node name="Ground4" type="StaticBody2D" parent="."]
+position = Vector2(178, -260)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4"]
+shape = SubResource("RectangleShape2D_2idcr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground4"]
+texture = SubResource("NoiseTexture2D_wlwcb")
