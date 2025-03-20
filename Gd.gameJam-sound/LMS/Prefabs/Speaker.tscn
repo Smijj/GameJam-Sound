@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://du1tamw661e12"]
+
+[ext_resource type="Script" uid="uid://b8rhd7lg4vlnn" path="res://LMS/Scripts/SpeakerCtrl.gd" id="1_d005a"]
+[ext_resource type="Texture2D" uid="uid://c2taef01gys07" path="res://LMS/Creative Assets/Textures/Tex_DottedLine.tres" id="2_3lrdt"]
+
+[sub_resource type="Gradient" id="Gradient_67c5i"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.109804, 0.827451, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nkohr"]
+noise_type = 2
+frequency = 0.0016
+offset = Vector3(-254.05, -237.7, 0)
+fractal_type = 0
+fractal_octaves = 3
+cellular_jitter = 0.0
+cellular_return_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2idcr"]
+color_ramp = SubResource("Gradient_67c5i")
+noise = SubResource("FastNoiseLite_nkohr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67c5i"]
+size = Vector2(326, 265)
+
+[node name="Speaker" type="Node2D"]
+z_index = 1
+rotation = -1.5708
+script = ExtResource("1_d005a")
+_LineTexture = ExtResource("2_3lrdt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.617188, 0.226562)
+texture = SubResource("NoiseTexture2D_2idcr")
+
+[node name="Direction Indicator" type="Polygon2D" parent="Sprite2D"]
+position = Vector2(0, -211.862)
+scale = Vector2(5.46836, 13.9229)
+color = Color(0.12549, 0.717647, 0.921569, 1)
+polygon = PackedVector2Array(-8, -3.8147e-06, 8, -3.8147e-06, -4.76837e-07, -16)
+uv = PackedVector2Array(-16, 8, 0, 8, -8, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -190.5)
+shape = SubResource("RectangleShape2D_67c5i")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEnteredArea"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExitedArea"]
