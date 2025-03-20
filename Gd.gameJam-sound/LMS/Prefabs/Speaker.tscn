@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://du1tamw661e12"]
+[gd_scene load_steps=8 format=3 uid="uid://du1tamw661e12"]
 
 [ext_resource type="Script" uid="uid://b8rhd7lg4vlnn" path="res://LMS/Scripts/SpeakerCtrl.gd" id="1_d005a"]
 [ext_resource type="Texture2D" uid="uid://c2taef01gys07" path="res://LMS/Creative Assets/Textures/Tex_DottedLine.tres" id="2_3lrdt"]
+[ext_resource type="Texture2D" uid="uid://ca880n1rn87pl" path="res://LMS/Creative Assets/Textures/Indicator.png" id="3_3lrdt"]
 
 [sub_resource type="Gradient" id="Gradient_67c5i"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 0.109804, 0.827451, 1)
@@ -22,10 +23,10 @@ noise = SubResource("FastNoiseLite_nkohr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67c5i"]
 size = Vector2(326, 265)
 
-[node name="Speaker" type="Node2D"]
-z_index = 1
-rotation = -1.5708
+[node name="Speaker" type="Node2D" node_paths=PackedStringArray("_Indicator")]
+z_index = 10
 script = ExtResource("1_d005a")
+_Indicator = NodePath("Indicator")
 _LineTexture = ExtResource("2_3lrdt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -46,6 +47,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -190.5)
 shape = SubResource("RectangleShape2D_67c5i")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+rotation = 1.5708
+scale = Vector2(0.588222, 0.773522)
+texture = ExtResource("3_3lrdt")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEnteredArea"]
 [connection signal="body_exited" from="Area2D" to="." method="OnBodyExitedArea"]

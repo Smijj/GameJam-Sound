@@ -4,11 +4,14 @@ extends Node2D
 @export var _SpeakerStrength: float = 1000
 var _CurrentPlayer: RigidBody2D = null
 
+@export var _Indicator: Sprite2D
+
 @export var _LineColour: Color = Color.LIME_GREEN
 @export var _LineTexture: Texture2D
 var _LineIndicator: Line2D=  null
 
 func _ready() -> void:
+	if _Indicator: _Indicator.visible = false
 	CreateLineIndicator()
 	
 func CreateLineIndicator() -> void:
@@ -37,12 +40,17 @@ func OnBodyEnteredArea(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if body is RigidBody2D:
 			_CurrentPlayer = body as RigidBody2D
+			if _Indicator: _Indicator.visible = true
+			SignalBus.OnPlayerEnterExitSpeakerRange.emit(true)
 
 
 func OnBodyExitedArea(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		_CurrentPlayer = null
 		_HideLineIndicator()
+		if _Indicator: _Indicator.visible = false
+		SignalBus.OnPlayerEnterExitSpeakerRange.emit(false)
+		
 
 #endregion
 

@@ -33,6 +33,7 @@ _Torque = 10000.0
 
 [node name="Speaker" parent="." instance=ExtResource("2_nkohr")]
 position = Vector2(208, -46)
+rotation = -1.57079
 
 [node name="Speaker2" parent="." instance=ExtResource("2_nkohr")]
 position = Vector2(-981, -230)
@@ -40,7 +41,6 @@ rotation = -5.23599
 
 [node name="Speaker3" parent="." instance=ExtResource("2_nkohr")]
 position = Vector2(-743, 395)
-rotation = 0.0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(333, 97)

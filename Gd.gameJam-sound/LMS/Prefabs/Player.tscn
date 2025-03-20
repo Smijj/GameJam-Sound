@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr8uswi7jck1a"]
+[gd_scene load_steps=7 format=3 uid="uid://dr8uswi7jck1a"]
 
 [ext_resource type="Script" uid="uid://04ddwvxogg0j" path="res://LMS/Scripts/PlayerCtrl.gd" id="1_vvo2y"]
+[ext_resource type="Texture2D" uid="uid://chdej7t0vkfwq" path="res://LMS/Creative Assets/Textures/Space_Key_Light.png" id="2_5hkj0"]
+[ext_resource type="Script" uid="uid://c4iel1tw6hdrp" path="res://LMS/Scripts/InteractIndicator.gd" id="3_yqhrn"]
 
 [sub_resource type="Gradient" id="Gradient_iaf3o"]
 offsets = PackedFloat32Array(0, 0.669643, 0.674107)
@@ -15,8 +17,10 @@ fill_from = Vector2(0.5, 0.5)
 radius = 32.0624
 
 [node name="Player" type="RigidBody2D" groups=["Player"]]
-z_index = 1
+z_index = 10
 collision_layer = 2
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("1_vvo2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,3 +30,13 @@ texture = SubResource("GradientTexture2D_wlwcb")
 shape = SubResource("CircleShape2D_mi6mn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Interact Indicator" type="Sprite2D" parent="." node_paths=PackedStringArray("_FollowTarget")]
+top_level = true
+z_index = 20
+position = Vector2(0, 13)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_5hkj0")
+offset = Vector2(0, 80)
+script = ExtResource("3_yqhrn")
+_FollowTarget = NodePath("..")
