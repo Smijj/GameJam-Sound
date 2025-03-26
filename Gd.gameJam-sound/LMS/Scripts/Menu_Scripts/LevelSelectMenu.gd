@@ -23,7 +23,7 @@ func _SetupInteractable(levelData: LevelData):
 	_LevelInteractablesContainer.add_child(levelInteractable)
 	
 	levelInteractable.button.text = levelData.LevelName
-	#levelInteractable.button.pressed.connect(func(): GameManager.StartLevel(levelData))
+	levelInteractable.button.pressed.connect(func(): GameManager.LoadLevel(levelData))
 	
 	if levelData.PersonalCompleteTime != -1:
 		levelInteractable.label.text = "Best Time: " + str(levelData.PersonalCompleteTime as int) + "s"

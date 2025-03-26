@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://nym5dcaeu7sy"]
+[gd_scene load_steps=3 format=3 uid="uid://nym5dcaeu7sy"]
+
+[ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="1_ffxff"]
+
+[sub_resource type="GDScript" id="GDScript_ffxff"]
+script/source = "extends FocusButton
+
+func _pressed() -> void:
+	GameManager.QuitLevel()
+"
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -63,6 +72,8 @@ size_flags_stretch_ratio = 2.0
 [node name="Btn_Resume" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Resume"
+script = ExtResource("1_ffxff")
+_FocusFirst = true
 
 [node name="Btn_Restart" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -71,6 +82,7 @@ text = "Restart"
 [node name="Btn_Menu" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "To Menu"
+script = SubResource("GDScript_ffxff")
 
 [node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

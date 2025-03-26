@@ -33,8 +33,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if _CurrentPlayer && event.is_action_pressed("Interact"):
-		_CurrentPlayer.linear_velocity = Vector2.ZERO
-		_CurrentPlayer.apply_impulse(transform.basis_xform(Vector2.UP) * _SpeakerStrength)
+		_PushPlayer()
 
 func OnBodyEnteredArea(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -55,6 +54,10 @@ func OnBodyExitedArea(body: Node2D) -> void:
 #endregion
 
 #region Private
+
+func _PushPlayer() -> void:
+	_CurrentPlayer.linear_velocity = Vector2.ZERO
+	_CurrentPlayer.apply_impulse(transform.basis_xform(Vector2.UP) * _SpeakerStrength)
 
 func _DrawLineIndicatorToTarget(target: Vector2) -> void:
 	if _LineIndicator.visible == false:

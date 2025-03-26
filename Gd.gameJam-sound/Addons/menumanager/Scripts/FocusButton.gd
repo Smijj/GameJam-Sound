@@ -6,6 +6,7 @@ extends Button
 func _ready() -> void:
 	if (_FocusFirst):
 		visibility_changed.connect(_OnVisibilityChanged)
+		grab_focus()
 
 func _OnVisibilityChanged() -> void:
 	if visible == false: return

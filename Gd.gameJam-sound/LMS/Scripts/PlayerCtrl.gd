@@ -1,3 +1,4 @@
+class_name PlayerCtrl
 extends RigidBody2D
 
 @export var _TorqueImpluse: float = 4000

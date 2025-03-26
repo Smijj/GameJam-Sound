@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyqwxtf2ohkmk"]
+[gd_scene load_steps=7 format=3 uid="uid://cyqwxtf2ohkmk"]
 
 [ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="1_an2dp"]
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_ri1re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2idcr"]
 size = Vector2(996, 48)
@@ -24,7 +25,12 @@ height = 50
 color_ramp = SubResource("Gradient_nkohr")
 noise = SubResource("FastNoiseLite_iaf3o")
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_ri1re")
+_StartPosition = NodePath("StartPoint")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(-26, -41)
 
 [node name="Speaker" parent="." instance=ExtResource("1_an2dp")]
 position = Vector2(208, -46)

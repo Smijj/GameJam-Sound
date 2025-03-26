@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1fxs4gs6awk0"]
+[gd_scene load_steps=5 format=3 uid="uid://c1fxs4gs6awk0"]
 
 [ext_resource type="Script" uid="uid://232bwhdwsoge" path="res://LMS/Scripts/Menu_Scripts/LevelSelectMenu.gd" id="1_vddk7"]
 [ext_resource type="Resource" uid="uid://bgvni076i7rp6" path="res://Resources/LevelsResource.tres" id="2_8ym0m"]
 [ext_resource type="PackedScene" uid="uid://drvmigr8dig0n" path="res://LMS/Prefabs/UI/LevelInteractable.tscn" id="3_nr8ww"]
+[ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="4_mllqk"]
 
 [node name="LevelSelectMenu" type="CanvasLayer" node_paths=PackedStringArray("_LevelInteractablesContainer")]
 process_mode = 3
@@ -65,6 +66,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
+script = ExtResource("4_mllqk")
 
 [node name="Spacer2" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

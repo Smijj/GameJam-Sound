@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://LMS/Scripts/Resource_Scripts/LevelDataResource.gd" id="1_e8eg2"]
 [ext_resource type="Resource" uid="uid://qpo4s400hgl4" path="res://Resources/LevelData/TestLevel.tres" id="2_45qv4"]
-[ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://LMS/Scripts/Resource_Scripts/LevelScenesResource.gd" id="2_uds5b"]
+[ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://LMS/Scripts/Resource_Scripts/LevelsResource.gd" id="2_uds5b"]
 
 [resource]
 script = ExtResource("2_uds5b")

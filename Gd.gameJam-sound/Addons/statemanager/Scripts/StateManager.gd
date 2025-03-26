@@ -18,9 +18,6 @@ var GameState:States = States.NONE:
 		GameState = value
 		OnGameStateChanged.emit(GameState)
 		print("new gamestate: "+str(GameState))
-		
-		#if value == States.GAMEPLAY: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		#else: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get:
 		return GameState
 
