@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=4 uid="uid://beys8d2ggdo0o"]
+
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_2vki2"]
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="2_qv2yn"]
+[ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_w4wn7"]
+[ext_resource type="Texture2D" uid="uid://1sgbnpkn32ov" path="res://LMS/Creative Assets/Tiles/Stones.png" id="4_w4wn7"]
+[ext_resource type="Texture2D" uid="uid://po3eqsm26txu" path="res://LMS/Creative Assets/Tiles/wall2.png" id="5_5f7ae"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw0sn"]
+texture = ExtResource("4_w4wn7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kro8x"]
+texture = ExtResource("5_5f7ae")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_ortpv"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kw0sn")
+sources/1 = SubResource("TileSetAtlasSource_kro8x")
+
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_2vki2")
+_StartPosition = NodePath("StartPoint")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(0, -126)
+
+[node name="Speaker" parent="." instance=ExtResource("2_qv2yn")]
+position = Vector2(252, -104)
+rotation = -1.57079
+
+[node name="Speaker2" parent="." instance=ExtResource("2_qv2yn")]
+position = Vector2(-190, -492)
+rotation = -1.5708
+
+[node name="Speaker3" parent="." instance=ExtResource("2_qv2yn")]
+position = Vector2(-348, 0)
+
+[node name="LevelComplete" parent="." instance=ExtResource("3_w4wn7")]
+position = Vector2(-822, -525)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAD9////AAAAAAAAAAD8////AQAAAAAAAAD7////AQAAAAAAAAD6////AQAAAAAAAAD5////AQAAAAAAAAD4////AQAAAAAAAAD4//7/AQAAAAAAAAD4//3/AQAAAAAAAAD4//z/AQAAAAAAAAD4//v/AQAAAAAAAAD4//r/AQAAAAAAAAD4//n/AQAAAAAAAAD3//n/AQAAAAAAAAD2//n/AQAAAAAAAAD1//n/AQAAAAAAAAD0//n/AQAAAAAAAADz//n/AQAAAAAAAADy//n/AQAAAAAAAADx//n/AQAAAAAAAADx//j/AQAAAAAAAADx//f/AQAAAAAAAADx//b/AQAAAAAAAADx//X/AQAAAAAAAADx//T/AQAAAAAAAADy//T/AQAAAAAAAADz//T/AQAAAAAAAAD0//T/AQAAAAAAAAD1//T/AQAAAAAAAAD2//T/AQAAAAAAAAD3//T/AQAAAAAAAAD4//T/AQAAAAAAAAD5//T/AQAAAAAAAAD6//T/AQAAAAAAAAD7//T/AQAAAAAAAAD8//T/AQAAAAAAAAD9//T/AQAAAAAAAAD+//T/AQAAAAAAAAD///T/AQAAAAAAAAAAAPT/AQAAAAAAAAABAPT/AQAAAAAAAAACAPT/AQAAAAAAAAADAPT/AQAAAAAAAAAEAPT/AQAAAAAAAAAFAPT/AQAAAAAAAAAFAPX/AQAAAAAAAAAFAPb/AQAAAAAAAAAFAPf/AQAAAAAAAAAFAPj/AQAAAAAAAAAFAPn/AQAAAAAAAAAFAPr/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAP//AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ortpv")
+collision_visibility_mode = 1

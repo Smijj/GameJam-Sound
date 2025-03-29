@@ -1,6 +1,11 @@
 extends Node
 
 @export var _PlayerPrefab: PackedScene = preload("res://LMS/Prefabs/Player.tscn")
+func GetPlayerInstance() -> PlayerCtrl:
+	if !_PlayerPrefab: return null
+	var instantiatedPlayer: PlayerCtrl = _PlayerPrefab.instantiate() as PlayerCtrl
+	if !instantiatedPlayer: return null
+	return instantiatedPlayer
 
 var _CurrentLevel: LevelCtrl = null
 var Paused: bool = false :
@@ -20,27 +25,24 @@ func _init() -> void:
 
 func _ready() -> void:
 	MenuManager.OpenMenu("Start")
+	
+	LevelManager.OnLevelLoaded.connect(_OnLevelLoaded)
+	LevelManager.OnLevelQuit.connect(_OnLevelQuit)
+	LevelManager.OnLevelComplete.connect(_OnLevelCopmlete)
+	MenuManager.OnMenusClosed.connect(_OnMenusClosed)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		Paused = !Paused
 
-func GetPlayerInstance() -> PlayerCtrl:
-	if !_PlayerPrefab: return null
-	var instantiatedPlayer: PlayerCtrl = _PlayerPrefab.instantiate() as PlayerCtrl
-	if !instantiatedPlayer: return null
-	return instantiatedPlayer
-
-func LoadLevel(levelData: LevelData) -> void:
-	if !levelData || !levelData.PackedLevel: return
-	
-	if _CurrentLevel: _CurrentLevel.free()
-	_CurrentLevel = levelData.PackedLevel.instantiate() as LevelCtrl
-	add_child(_CurrentLevel)
-	
+func _OnLevelLoaded() -> void:
 	MenuManager.CloseMenus(false)
 
-func QuitLevel() -> void:
-	if _CurrentLevel:
-		_CurrentLevel.queue_free()
+func _OnLevelQuit() -> void:
 	MenuManager.OpenMenu("Start")
+
+func _OnLevelCopmlete() -> void:
+	MenuManager.OpenMenu("Start")
+	
+func _OnMenusClosed() -> void:
+	Paused = false

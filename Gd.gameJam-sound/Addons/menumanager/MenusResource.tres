@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenusResource" load_steps=5 format=3 uid="uid://c8a4km21ysd1l"]
 
-[ext_resource type="PackedScene" uid="uid://c1fxs4gs6awk0" path="res://LMS/Scenes/Menus/LevelSelectMenu.tscn" id="1_3bpes"]
+[ext_resource type="PackedScene" uid="uid://c1fxs4gs6awk0" path="res://Addons/menumanager/Scenes/LevelSelectMenu.tscn" id="1_3bpes"]
 [ext_resource type="PackedScene" uid="uid://g6r5rxpgx4d7" path="res://Addons/menumanager/Scenes/StartMenu.tscn" id="2_2yjfa"]
 [ext_resource type="PackedScene" uid="uid://nym5dcaeu7sy" path="res://Addons/menumanager/Scenes/PauseMenu.tscn" id="3_ntbof"]
 [ext_resource type="Script" uid="uid://bajbpu76262wp" path="res://Addons/menumanager/Scripts/MenusResource.gd" id="4_o5u41"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy75ah2b3tvov"]
+
+[ext_resource type="Script" uid="uid://c6ohbs4a5g8m2" path="res://LMS/Scripts/CompleteLevel.gd" id="1_x3kse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqj0"]
+size = Vector2(150, 150)
+
+[node name="LevelComplete" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_x3kse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0yqj0")

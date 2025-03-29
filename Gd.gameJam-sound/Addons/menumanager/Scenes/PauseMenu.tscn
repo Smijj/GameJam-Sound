@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://nym5dcaeu7sy"]
+[gd_scene load_steps=4 format=3 uid="uid://nym5dcaeu7sy"]
 
 [ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="1_ffxff"]
+
+[sub_resource type="GDScript" id="GDScript_53rm4"]
+script/source = "extends Button
+
+func _pressed() -> void:
+	LevelManager.RestartLevel()
+"
 
 [sub_resource type="GDScript" id="GDScript_ffxff"]
 script/source = "extends FocusButton
 
 func _pressed() -> void:
-	GameManager.QuitLevel()
+	LevelManager.StopLevel()
 "
 
 [node name="PauseMenu" type="CanvasLayer"]
@@ -78,6 +85,7 @@ _FocusFirst = true
 [node name="Btn_Restart" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Restart"
+script = SubResource("GDScript_53rm4")
 
 [node name="Btn_Menu" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2

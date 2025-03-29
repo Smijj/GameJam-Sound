@@ -1,5 +1,7 @@
 extends Node
 
+signal OnMenusClosed
+
 const _MenusResource: MenusResource = preload("res://Addons/menumanager/MenusResource.tres")
 var _Scenes: Dictionary[String, CanvasLayer] = {}
 
@@ -43,6 +45,8 @@ func Back() -> void:
 	var menuToOpen:String = _MenuHistory[-2]
 	OpenMenu(menuToOpen)
 
+## Closes all open menus and resets the Menu History. [br]
+## [param revertGameState] will tell the StateManager to try and return to the state before it was changed to MENU.
 func CloseMenus(revertGameState = true) -> void:
 	_MenuHistory.clear()
 	if _CurrentMenu == "" || !_Scenes.has(_CurrentMenu): return
@@ -51,4 +55,4 @@ func CloseMenus(revertGameState = true) -> void:
 	_CurrentMenu = ""
 	
 	if revertGameState: StateManager.ReturnToPreviousState()
-	GameManager.Paused = false
+	OnMenusClosed.emit()

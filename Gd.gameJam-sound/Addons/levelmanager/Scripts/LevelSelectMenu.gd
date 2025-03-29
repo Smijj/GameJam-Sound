@@ -2,7 +2,8 @@ extends CanvasLayer
 
 @export var _LevelInteractablesContainer: GridContainer
 @export var _LevelInteractablePrefab: PackedScene
-@export var _LevelsResource: LevelsResource
+
+var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
 
 var _Buttons:Array[Button] = []
 var _LevelInteractables: Dictionary[LevelData, LevelInteractable] = {}
@@ -23,7 +24,7 @@ func _SetupInteractable(levelData: LevelData):
 	_LevelInteractablesContainer.add_child(levelInteractable)
 	
 	levelInteractable.button.text = levelData.LevelName
-	levelInteractable.button.pressed.connect(func(): GameManager.LoadLevel(levelData))
+	levelInteractable.button.pressed.connect(func(): LevelManager.LoadLevel(levelData))
 	
 	if levelData.PersonalCompleteTime != -1:
 		levelInteractable.label.text = "Best Time: " + str(levelData.PersonalCompleteTime as int) + "s"

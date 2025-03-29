@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drvmigr8dig0n"]
 
-[ext_resource type="Script" uid="uid://b16sho728x34v" path="res://LMS/Scripts/Menu_Scripts/LevelInteractable.gd" id="1_rltuk"]
+[ext_resource type="Script" uid="uid://b16sho728x34v" path="res://Addons/levelmanager/Scripts/LevelInteractable.gd" id="1_rltuk"]
 
 [node name="LevelInteractable" type="VBoxContainer" node_paths=PackedStringArray("button", "label")]
 size_flags_horizontal = 3

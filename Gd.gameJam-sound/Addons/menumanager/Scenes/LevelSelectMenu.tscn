@@ -1,16 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1fxs4gs6awk0"]
+[gd_scene load_steps=4 format=3 uid="uid://c1fxs4gs6awk0"]
 
-[ext_resource type="Script" uid="uid://232bwhdwsoge" path="res://LMS/Scripts/Menu_Scripts/LevelSelectMenu.gd" id="1_vddk7"]
-[ext_resource type="Resource" uid="uid://bgvni076i7rp6" path="res://Resources/LevelsResource.tres" id="2_8ym0m"]
-[ext_resource type="PackedScene" uid="uid://drvmigr8dig0n" path="res://LMS/Prefabs/UI/LevelInteractable.tscn" id="3_nr8ww"]
-[ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="4_mllqk"]
+[ext_resource type="Script" uid="uid://232bwhdwsoge" path="res://Addons/levelmanager/Scripts/LevelSelectMenu.gd" id="1_up1gq"]
+[ext_resource type="PackedScene" uid="uid://drvmigr8dig0n" path="res://Addons/levelmanager/Prefabs/LevelInteractable.tscn" id="2_0mbjq"]
+[ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="3_odyq2"]
 
 [node name="LevelSelectMenu" type="CanvasLayer" node_paths=PackedStringArray("_LevelInteractablesContainer")]
 process_mode = 3
-script = ExtResource("1_vddk7")
+script = ExtResource("1_up1gq")
 _LevelInteractablesContainer = NodePath("PanelContainer/HBoxContainer/VBoxContainer/LevelInteractablesContainer")
-_LevelInteractablePrefab = ExtResource("3_nr8ww")
-_LevelsResource = ExtResource("2_8ym0m")
+_LevelInteractablePrefab = ExtResource("2_0mbjq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -66,7 +64,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
-script = ExtResource("4_mllqk")
+script = ExtResource("3_odyq2")
 
 [node name="Spacer2" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
