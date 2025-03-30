@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=4 uid="uid://dgt638vbyhkkx"]
+
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_b6te0"]
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="2_6xmf8"]
+[ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_cksg8"]
+[ext_resource type="TileSet" uid="uid://byrbl6ehculig" path="res://LMS/Creative Assets/TileSet.tres" id="4_l1mkx"]
+
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_b6te0")
+_StartPosition = NodePath("StartPoint")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(0, -126)
+
+[node name="Speaker" parent="." instance=ExtResource("2_6xmf8")]
+position = Vector2(252, -104)
+rotation = -1.57079
+
+[node name="Speaker2" parent="." instance=ExtResource("2_6xmf8")]
+position = Vector2(-190, -492)
+rotation = -1.5708
+
+[node name="Speaker3" parent="." instance=ExtResource("2_6xmf8")]
+position = Vector2(-348, 0)
+
+[node name="LevelComplete" parent="." instance=ExtResource("3_cksg8")]
+position = Vector2(-822, -525)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAwABAAAAAAD+/wAAAwABAAAAAAD9/wAAAwABAAAAAAAAAAAAAwABAAAAAAABAAAAAwABAAAAAAACAAAAAwABAAAAAAADAAAAAwABAAAAAAAEAAAAAwABAAAAAAAFAAAAAwABAAAAAAD8////AwABAAAAAAD7////AwABAAAAAAD6////AwABAAAAAAD5////AwABAAAAAAD4////AwABAAAAAAD4//7/AwABAAAAAAD4//3/AwABAAAAAAD4//z/AwABAAAAAAD4//v/AwABAAAAAAD4//r/AwABAAAAAAD2//n/AwABAAAAAAD1//n/AwABAAAAAAD0//n/AwABAAAAAADz//n/AwABAAAAAADy//n/AwABAAAAAADx//n/AwABAAAAAADx//j/AwABAAAAAADx//f/AwABAAAAAADx//b/AwABAAAAAADx//X/AwABAAAAAADx//T/AwABAAAAAADy//T/AwABAAAAAADz//T/AwABAAAAAAD0//T/AwABAAAAAAD1//T/AwABAAAAAAD2//T/AwABAAAAAAD3//T/AwABAAAAAAD4//T/AwABAAAAAAD5//T/AwABAAAAAAD6//T/AwABAAAAAAD7//T/AwABAAAAAAD8//T/AwABAAAAAAD9//T/AwABAAAAAAD+//T/AwABAAAAAAD///T/AwABAAAAAAAAAPT/AwABAAAAAAABAPT/AwABAAAAAAACAPT/AwABAAAAAAADAPT/AwABAAAAAAAEAPT/AwABAAAAAAAFAPT/AwABAAAAAAAFAPX/AwABAAAAAAAFAPb/AwABAAAAAAAFAPf/AwABAAAAAAAFAPj/AwABAAAAAAAFAPn/AwABAAAAAAAFAPr/AwABAAAAAAAFAPv/AwABAAAAAAAFAPz/AwABAAAAAAAFAP3/AwABAAAAAAAFAP7/AwABAAAAAAAFAP//AwABAAAAAAAEAPX/AwACAAAAADDy//X/AwACAAAAAFDy//j/AwACAAAAAAAEAP//AwACAAAAAGD9////BAADAAAAAAD5//7/BAADAAAAAAD3//n/BAADAAAAAAA=")
+tile_set = ExtResource("4_l1mkx")

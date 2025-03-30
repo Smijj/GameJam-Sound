@@ -1,28 +1,38 @@
-[gd_scene load_steps=9 format=4 uid="uid://beys8d2ggdo0o"]
+[gd_scene load_steps=11 format=4 uid="uid://beys8d2ggdo0o"]
 
 [ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_2vki2"]
 [ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="2_qv2yn"]
 [ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_w4wn7"]
 [ext_resource type="Texture2D" uid="uid://1sgbnpkn32ov" path="res://LMS/Creative Assets/Tiles/Stones.png" id="4_w4wn7"]
 [ext_resource type="Texture2D" uid="uid://po3eqsm26txu" path="res://LMS/Creative Assets/Tiles/wall2.png" id="5_5f7ae"]
+[ext_resource type="Texture2D" uid="uid://c5i1qf7q4a0qo" path="res://LMS/Creative Assets/Tileset.png" id="6_5f7ae"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw0sn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f7ae"]
 texture = ExtResource("4_w4wn7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kro8x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw0sn"]
 texture = ExtResource("5_5f7ae")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kro8x"]
+texture = ExtResource("6_5f7ae")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
 [sub_resource type="TileSet" id="TileSet_ortpv"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_kw0sn")
-sources/1 = SubResource("TileSetAtlasSource_kro8x")
+sources/0 = SubResource("TileSetAtlasSource_5f7ae")
+sources/2 = SubResource("TileSetAtlasSource_kro8x")
+sources/1 = SubResource("TileSetAtlasSource_kw0sn")
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
 script = ExtResource("1_2vki2")

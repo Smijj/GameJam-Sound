@@ -1,19 +1,12 @@
 [gd_resource type="Resource" script_class="LevelsResource" load_steps=6 format=3 uid="uid://bgvni076i7rp6"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
-[ext_resource type="Resource" uid="uid://b1tew68bpqygm" path="res://Resources/LevelData/TestLevel.tres" id="2_45qv4"]
+[ext_resource type="Resource" uid="uid://dqd6pfvs345ru" path="res://Resources/LevelData/TestLevel.tres" id="2_45qv4"]
 [ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://Addons/levelmanager/Scripts/LevelsResource.gd" id="2_uds5b"]
-[ext_resource type="PackedScene" uid="uid://beys8d2ggdo0o" path="res://LMS/Scenes/Levels/Level01.tscn" id="3_0dyit"]
-
-[sub_resource type="Resource" id="Resource_3krqp"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("3_0dyit")
-LevelName = "Level 1"
-Completed = false
-PersonalCompleteTime = -1.0
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
+[ext_resource type="Resource" uid="uid://r1uvssa51ld5" path="res://Resources/LevelData/Level_01.tres" id="3_3krqp"]
+[ext_resource type="Resource" uid="uid://cogbn37qkpwfl" path="res://Resources/LevelData/Level_02.tres" id="4_chg41"]
 
 [resource]
 script = ExtResource("2_uds5b")
-Levels = Array[ExtResource("1_e8eg2")]([ExtResource("2_45qv4"), SubResource("Resource_3krqp")])
+Levels = Array[ExtResource("1_e8eg2")]([ExtResource("2_45qv4"), ExtResource("3_3krqp"), ExtResource("4_chg41")])
 metadata/_custom_type_script = "uid://cgg1d75r0ukjs"

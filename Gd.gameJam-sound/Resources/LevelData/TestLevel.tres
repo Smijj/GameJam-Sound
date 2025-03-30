@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://dkkwvwv0mt0tw"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://cbj0k1wgw7b62"]
 
 [ext_resource type="PackedScene" uid="uid://cyqwxtf2ohkmk" path="res://LMS/Scenes/Levels/TestLevel.tscn" id="1_gmisf"]
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="2_i0oi5"]

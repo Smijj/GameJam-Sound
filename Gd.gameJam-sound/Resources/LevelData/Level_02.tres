@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://LMS/Scenes/Levels/Level02.tscn" id="1_qob31"]
+[ext_resource type="Script" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="2_hgjal"]
+
+[resource]
+script = ExtResource("2_hgjal")
+PackedLevel = ExtResource("1_qob31")
+LevelName = "Level 2"
+Completed = true
+PersonalCompleteTime = 4.71667
+metadata/_custom_type_script = "uid://rfm1a3uatox8"
