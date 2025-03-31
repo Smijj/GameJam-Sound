@@ -38,7 +38,7 @@ func _ReloadInteractables() -> void:
 	
 	for index in keys.size():
 		if keys[index].PersonalCompleteTime != -1:
-			_LevelInteractables[keys[index]].label.text = "Best Time: " + str(keys[index].PersonalCompleteTime as int) + "s"
+			_LevelInteractables[keys[index]].label.text = "Best Time: " + str("%0.2f" % keys[index].PersonalCompleteTime,  "s")
 		if index > 0:
 			if keys[index-1].Completed:
 				_LevelInteractables[keys[index]].button.disabled = false

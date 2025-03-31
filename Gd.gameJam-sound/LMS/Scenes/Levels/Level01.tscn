@@ -34,7 +34,7 @@ sources/0 = SubResource("TileSetAtlasSource_5f7ae")
 sources/2 = SubResource("TileSetAtlasSource_kro8x")
 sources/1 = SubResource("TileSetAtlasSource_kw0sn")
 
-[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+[node name="Level 1" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
 script = ExtResource("1_2vki2")
 _StartPosition = NodePath("StartPoint")
 

@@ -9,3 +9,4 @@ extends Resource
 @export_category("Data")
 @export var Completed: bool = false
 @export var PersonalCompleteTime: float = -1
+@export var Collectables: Array[NodePath] = []

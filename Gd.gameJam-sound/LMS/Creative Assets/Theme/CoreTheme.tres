@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://hj1jx8y8su4c"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://hj1jx8y8su4c"]
 
+[ext_resource type="StyleBox" uid="uid://dqsuvn8sqbtl7" path="res://LMS/Creative Assets/Theme/Btn_Disabled.tres" id="1_k1ltc"]
 [ext_resource type="FontFile" uid="uid://4kf6n4h8mq6y" path="res://LMS/Creative Assets/Theme/KGHAPPY.ttf" id="1_kuqjh"]
 [ext_resource type="StyleBox" uid="uid://cm8eu6rupwvni" path="res://LMS/Creative Assets/Theme/Btn_Focus.tres" id="1_xj6u2"]
 [ext_resource type="StyleBox" uid="uid://dg4otmi01s5qv" path="res://LMS/Creative Assets/Theme/Btn_Hover.tres" id="2_6q8mn"]
 [ext_resource type="StyleBox" uid="uid://cbji7qmmsa26u" path="res://LMS/Creative Assets/Theme/Btn_Normal.tres" id="3_qea6h"]
+[ext_resource type="StyleBox" uid="uid://ff65hn58a7yg" path="res://LMS/Creative Assets/Theme/Btn_Pressed.tres" id="5_m8tm0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clv0t"]
 bg_color = Color(0.363819, 0.169316, 0.0139335, 1)
@@ -27,9 +29,11 @@ BackgroundContainer/styles/panel = SubResource("StyleBoxFlat_clv0t")
 Button/colors/font_color = Color(0.737255, 0.929412, 0.964706, 1)
 Button/colors/font_focus_color = Color(0.184314, 0.0941176, 0.278431, 1)
 Button/colors/font_hover_color = Color(0.184314, 0.0941176, 0.278431, 1)
+Button/styles/disabled = ExtResource("1_k1ltc")
 Button/styles/focus = ExtResource("1_xj6u2")
 Button/styles/hover = ExtResource("2_6q8mn")
 Button/styles/normal = ExtResource("3_qea6h")
+Button/styles/pressed = ExtResource("5_m8tm0")
 HeaderLarge/base_type = &"Label"
 HeaderLarge/colors/font_color = Color(1, 1, 1, 1)
 HeaderLarge/font_sizes/font_size = 36

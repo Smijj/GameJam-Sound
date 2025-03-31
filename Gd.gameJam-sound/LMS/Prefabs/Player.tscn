@@ -2,29 +2,28 @@
 
 [ext_resource type="Script" uid="uid://04ddwvxogg0j" path="res://LMS/Scripts/PlayerCtrl.gd" id="1_vvo2y"]
 [ext_resource type="Texture2D" uid="uid://chdej7t0vkfwq" path="res://LMS/Creative Assets/Textures/Space_Key_Light.png" id="2_5hkj0"]
+[ext_resource type="Texture2D" uid="uid://cwhiwl36bsaqg" path="res://LMS/Creative Assets/Player.png" id="2_ddlqi"]
 [ext_resource type="Script" uid="uid://c4iel1tw6hdrp" path="res://LMS/Scripts/InteractIndicator.gd" id="3_yqhrn"]
 
-[sub_resource type="Gradient" id="Gradient_iaf3o"]
-offsets = PackedFloat32Array(0, 0.669643, 0.674107)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wlwcb"]
-gradient = SubResource("Gradient_iaf3o")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ddlqi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mi6mn"]
-radius = 32.0624
+radius = 30.0
 
 [node name="Player" type="RigidBody2D" groups=["Player"]]
 z_index = 10
 collision_layer = 2
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_ddlqi")
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_vvo2y")
+_TorqueImpluse = 3000.0
+_Torque = 6000.0
+_AirVelocity = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_wlwcb")
+texture = ExtResource("2_ddlqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mi6mn")

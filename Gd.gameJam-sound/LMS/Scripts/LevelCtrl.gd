@@ -28,4 +28,5 @@ func _OnLevelComplete() -> void:
 	if existingTime > _LevelTime || existingTime < 0:
 		LevelManager.CurrentLevelData.PersonalCompleteTime = _LevelTime
 	LevelManager.CurrentLevelData.Completed = true
-	ResourceSaver.save(LevelManager.CurrentLevelData)
+	
+	LevelManager.SaveLevelData()

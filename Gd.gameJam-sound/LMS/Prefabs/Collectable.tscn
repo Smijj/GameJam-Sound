@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddfwsbaoopsds"]
+
+[ext_resource type="Texture2D" uid="uid://cwhiwl36bsaqg" path="res://LMS/Creative Assets/Player.png" id="1_5ijyg"]
+[ext_resource type="Script" uid="uid://cj8hxmfau67k1" path="res://LMS/Scripts/Collectable.gd" id="1_xyifv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uscx"]
+
+[node name="Collectable" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xyifv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8uscx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.89389, 0.89389, 0, 1)
+z_index = 5
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("1_5ijyg")

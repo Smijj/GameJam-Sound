@@ -24,8 +24,9 @@ noise = SubResource("FastNoiseLite_nkohr")
 size = Vector2(326, 265)
 
 [node name="Speaker" type="Node2D" node_paths=PackedStringArray("_Indicator")]
-z_index = 10
+z_index = 5
 script = ExtResource("1_d005a")
+_SpeakerStrength = 650.0
 _Indicator = NodePath("Indicator")
 _LineTexture = ExtResource("2_3lrdt")
 
@@ -50,6 +51,8 @@ shape = SubResource("RectangleShape2D_67c5i")
 
 [node name="Indicator" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
+z_index = 15
+z_as_relative = false
 rotation = 1.5708
 scale = Vector2(0.588222, 0.773522)
 texture = ExtResource("3_3lrdt")
