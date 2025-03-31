@@ -23,30 +23,35 @@ func _SetupInteractable(levelData: LevelData):
 	var levelInteractable:LevelInteractable = _LevelInteractablePrefab.instantiate() as LevelInteractable
 	_LevelInteractablesContainer.add_child(levelInteractable)
 	
-	levelInteractable.button.text = levelData.LevelName
-	levelInteractable.button.pressed.connect(func(): LevelManager.LoadLevel(levelData))
+	levelInteractable.SetButton(levelData.LevelName, func(): LevelManager.LoadLevel(levelData))
 	
 	if levelData.PersonalCompleteTime != -1:
-		levelInteractable.label.text = "Best Time: " + str(levelData.PersonalCompleteTime as int) + "s"
+		levelInteractable.SetTimeLabel(levelData.PersonalCompleteTime)
+	levelInteractable.SetCollectablesLabel(levelData.Collectables.size())
 	
 	_LevelInteractables.set(levelData, levelInteractable)
 
 func _ReloadInteractables() -> void:
 	if visible == false || _LevelInteractables.is_empty(): return
 	
-	var keys:Array[LevelData] = _LevelInteractables.keys()
-	
-	for index in keys.size():
-		if keys[index].PersonalCompleteTime != -1:
-			_LevelInteractables[keys[index]].label.text = "Best Time: " + str("%0.2f" % keys[index].PersonalCompleteTime,  "s")
+	var levelDatas:Array[LevelData] = _LevelInteractables.keys()
+	for index in levelDatas.size():
+		# Handle Personal Complete Time label's text  
+		if levelDatas[index].PersonalCompleteTime != -1:
+			_LevelInteractables[levelDatas[index]].SetTimeLabel(levelDatas[index].PersonalCompleteTime)
+		
+		# Handle Collectables label
+		_LevelInteractables[levelDatas[index]].SetCollectablesLabel(levelDatas[index].Collectables.size())
+		
+		# Handle if the level button is disabled or not. Also focuses the button for the level the player has yet to complete
 		if index > 0:
-			if keys[index-1].Completed:
-				_LevelInteractables[keys[index]].button.disabled = false
+			if levelDatas[index-1].Completed:
+				_LevelInteractables[levelDatas[index]].button.disabled = false
 				# if the previous level has been completed, focus this button instead
-				_LevelInteractables[keys[index]].button.grab_focus()
+				_LevelInteractables[levelDatas[index]].button.grab_focus()
 			else:
 				# if the previous level hasn't been compeleted, this level is locked
-				_LevelInteractables[keys[index]].button.disabled = true
+				_LevelInteractables[levelDatas[index]].button.disabled = true
 		else:
 			# If its the first button in the list select it
-			_LevelInteractables[keys[index]].button.grab_focus()
+			_LevelInteractables[levelDatas[index]].button.grab_focus()

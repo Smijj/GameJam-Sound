@@ -1,19 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://drvmigr8dig0n"]
+[gd_scene load_steps=3 format=3 uid="uid://drvmigr8dig0n"]
 
 [ext_resource type="Script" uid="uid://b16sho728x34v" path="res://Addons/levelmanager/Scripts/LevelInteractable.gd" id="1_rltuk"]
+[ext_resource type="Texture2D" uid="uid://cwhiwl36bsaqg" path="res://LMS/Creative Assets/Player.png" id="2_v5x1i"]
 
-[node name="LevelInteractable" type="VBoxContainer" node_paths=PackedStringArray("button", "label")]
+[node name="LevelInteractable" type="VBoxContainer" node_paths=PackedStringArray("button", "labelTime", "labelCollectables")]
 size_flags_horizontal = 3
 script = ExtResource("1_rltuk")
-button = NodePath("Button")
-label = NodePath("Label")
+button = NodePath("Button_Play")
+labelTime = NodePath("Label_Time")
+labelCollectables = NodePath("HBoxContainer/Label_Collectables")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button_Play" type="Button" parent="."]
 layout_mode = 2
 text = "  Level 1  "
 
-[node name="Label" type="Label" parent="."]
+[node name="Label_Time" type="Label" parent="."]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Best Time: N/A"
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("2_v5x1i")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label_Collectables" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 10
+text = "x 10"
+
+[node name="Spacer2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
