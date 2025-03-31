@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://cf7185vsqatmm"]
 
-[ext_resource type="PackedScene" path="res://LMS/Scenes/Levels/Level01.tscn" id="1_03v33"]
-[ext_resource type="Script" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="2_ohgqx"]
+[ext_resource type="PackedScene" uid="uid://beys8d2ggdo0o" path="res://LMS/Scenes/Levels/Level01.tscn" id="1_03v33"]
+[ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="2_ohgqx"]
 
 [resource]
 script = ExtResource("2_ohgqx")

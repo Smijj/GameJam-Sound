@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=6 format=3 uid="uid://c5yyaukp7fjve"]
 
-[ext_resource type="Script" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
-[ext_resource type="Resource" path="res://Resources/LevelData/TestLevel.tres" id="2_45qv4"]
-[ext_resource type="Script" path="res://Addons/levelmanager/Scripts/LevelsResource.gd" id="2_uds5b"]
-[ext_resource type="Resource" path="res://Resources/LevelData/Level_01.tres" id="3_3krqp"]
-[ext_resource type="Resource" path="res://Resources/LevelData/Level_02.tres" id="4_chg41"]
+[ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
+[ext_resource type="Resource" uid="uid://cdlthmjomljg8" path="res://Resources/LevelData/TestLevel.tres" id="2_45qv4"]
+[ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://Addons/levelmanager/Scripts/LevelsResource.gd" id="2_uds5b"]
+[ext_resource type="Resource" uid="uid://cf7185vsqatmm" path="res://Resources/LevelData/Level_01.tres" id="3_3krqp"]
+[ext_resource type="Resource" uid="uid://chm8hinjaxcoa" path="res://Resources/LevelData/Level_02.tres" id="4_chg41"]
 
 [resource]
 script = ExtResource("2_uds5b")
