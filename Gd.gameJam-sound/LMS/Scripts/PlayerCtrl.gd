@@ -54,7 +54,6 @@ func _physics_process(delta: float) -> void:
 	if absf(angular_velocity) > 1 && (_IsTouchingSurface() || _AirTimeCounter < _MinAirTimeBeforeCollisionSFX):
 		var audioplayer:AudioStreamPlayer = AudioHandler.PlayAmbient(_SFXRolling, 0.25)
 		audioplayer.pitch_scale = lerpf(0.3, 1.1, linear_velocity.length() / _WowSpeed)
-		print(audioplayer.pitch_scale)
 	else:
 		AudioHandler.StopAmbient(_SFXRolling)
 

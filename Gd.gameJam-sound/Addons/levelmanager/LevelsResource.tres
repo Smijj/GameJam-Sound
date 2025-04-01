@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=5 format=3 uid="uid://c01us41etx5io"]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=5 format=3 uid="uid://ctnbu0kl4tuui"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
 [ext_resource type="PackedScene" uid="uid://dgt638vbyhkkx" path="res://LMS/Scenes/Levels/Level_Test.tscn" id="2_858hk"]
@@ -10,7 +10,7 @@ PackedLevel = ExtResource("2_858hk")
 LevelName = "Level Test"
 Completed = true
 PersonalCompleteTime = 1.8
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level 2/Collectables/Collectable"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable3"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable2")])
+Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level 2/Collectables/Collectable3"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable2"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable4")])
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [resource]

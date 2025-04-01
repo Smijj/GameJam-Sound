@@ -7,7 +7,13 @@ func GetPlayerInstance() -> PlayerCtrl:
 	if !instantiatedPlayer: return null
 	return instantiatedPlayer
 
-var _CurrentLevel: LevelCtrl = null
+var _GUIPrefab: PackedScene = preload("res://LMS/Prefabs/GUI.tscn")
+func GetGUIInstance() -> GUI:
+	if !_GUIPrefab: return null
+	var instantiatedGUI: GUI = _GUIPrefab.instantiate() as GUI
+	if !instantiatedGUI: return null
+	return instantiatedGUI
+
 var Paused: bool = false :
 	set (value): 
 		print(value)

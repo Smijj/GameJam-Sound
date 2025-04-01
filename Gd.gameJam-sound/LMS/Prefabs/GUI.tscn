@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm80f86wusjj7"]
+
+[ext_resource type="Script" uid="uid://mdp18uurwddr" path="res://LMS/Scripts/GUI.gd" id="1_hcows"]
+[ext_resource type="Shader" uid="uid://cbh8mynxh3g7a" path="res://LMS/Creative Assets/Shaders/ShaderDistortion.gdshader" id="2_vaf50"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b132d"]
+shader = ExtResource("2_vaf50")
+shader_parameter/center = Vector2(0, 0)
+shader_parameter/force = 0.03
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.1
+
+[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("DistortionProcessor")]
+script = ExtResource("1_hcows")
+DistortionProcessor = NodePath("DistortionProcessor")
+
+[node name="DistortionProcessor" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_b132d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

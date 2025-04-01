@@ -31,3 +31,8 @@ script = SubResource("GDScript_67c5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundary"]
 shape = SubResource("WorldBoundaryShape2D_67c5i")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.466181, 0.466181, 0.466181, 1)
+energy = 0.5
+shadow_color = Color(0, 0, 0, 0.647059)

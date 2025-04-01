@@ -22,5 +22,4 @@ func _OnBodyEnteredArea(body: Node2D) -> void:
 	_Hide()
 
 func _Hide() -> void:
-	visible = false
-	monitoring = false
+	queue_free()

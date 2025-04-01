@@ -4,6 +4,7 @@ extends Node2D
 @export var _StartPosition:Marker2D = null
 
 var _PlayerInstance: PlayerCtrl = null
+var _GUIInstance: GUI = null
 var _LevelTime: float = 0
 
 func _ready() -> void:
@@ -16,6 +17,9 @@ func _SetupLevel() -> void:
 	if _PlayerInstance:
 		add_child(_PlayerInstance)
 		_PlayerInstance.global_position = _StartPosition.global_position
+	_GUIInstance = GameManager.GetGUIInstance()
+	if _GUIInstance:
+		add_child(_GUIInstance)
 	
 	StateManager.GameState = StateManager.States.GAMEPLAY
 

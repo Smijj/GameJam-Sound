@@ -35,6 +35,7 @@ mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_ddlqi")
 contact_monitor = true
 max_contacts_reported = 2
+angular_damp = 2.0
 script = ExtResource("1_vvo2y")
 _TorqueImpluse = 1500.0
 _Torque = 3000.0

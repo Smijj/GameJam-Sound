@@ -7,7 +7,7 @@ signal OnLevelQuit
 var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
 
 var CurrentLevelData: LevelData = null
-var _CurrentLevel: LevelCtrl = null
+var CurrentLevel: LevelCtrl = null
 
 func SaveLevelData() -> void:
 	if CurrentLevelData: ResourceSaver.save(CurrentLevelData)
@@ -17,13 +17,13 @@ func LoadLevel(levelData: LevelData) -> void:
 	if !levelData || !levelData.PackedLevel: return
 	
 	# Removes any active level is there is already one open
-	if _CurrentLevel: 
+	if CurrentLevel: 
 		_StopLevel()
-		await _CurrentLevel.tree_exited	# Waits for the level to be deleted before continuing
+		await CurrentLevel.tree_exited	# Waits for the level to be deleted before continuing
 	
-	_CurrentLevel = levelData.PackedLevel.instantiate() as LevelCtrl
+	CurrentLevel = levelData.PackedLevel.instantiate() as LevelCtrl
 	CurrentLevelData = levelData
-	add_child(_CurrentLevel)
+	add_child(CurrentLevel)
 	
 	OnLevelLoaded.emit()
 
@@ -40,6 +40,6 @@ func QuitLevel() -> void:
 	_StopLevel()
 
 func _StopLevel() -> void:
-	if !_CurrentLevel: return
-	_CurrentLevel.queue_free()
+	if !CurrentLevel: return
+	CurrentLevel.queue_free()
 	CurrentLevelData = null
