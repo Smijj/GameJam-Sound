@@ -55,8 +55,8 @@ func PlaySFX(sound:AudioStream, bus:String = SFX_BUS) -> void:
 	_SFXAudioPlayers[_SFXIndex].play()
 	_SFXIndex += 1
 
-func PlayAmbient(sound:AudioStream, bus:String = Ambient_BUS) -> void:
-	if _AmbientAudioPlayers.has(sound): return
+func PlayAmbient(sound:AudioStream, fadeInTime:float = 0.5, bus:String = Ambient_BUS) -> AudioStreamPlayer:
+	if _AmbientAudioPlayers.has(sound): return _AmbientAudioPlayers[sound]
 	# Create Ambient AudioPlayer instance
 	var ambientAudioPlayer:AudioStreamPlayer = AudioStreamPlayer.new()
 	ambientAudioPlayer.name = "Ambient_"+str(sound.get_rid())
@@ -69,7 +69,8 @@ func PlayAmbient(sound:AudioStream, bus:String = Ambient_BUS) -> void:
 	
 	# Play ambient and fade it in
 	ambientAudioPlayer.play()
-	create_tween().tween_property(ambientAudioPlayer, "volume_db", 0, 0.5)
+	create_tween().tween_property(ambientAudioPlayer, "volume_db", 0, fadeInTime)
+	return ambientAudioPlayer
 
 func StopAmbient(sound:AudioStream) -> void:
 	if !_AmbientAudioPlayers.has(sound): return

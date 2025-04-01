@@ -1,60 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://du1tamw661e12"]
+[gd_scene load_steps=7 format=3 uid="uid://du1tamw661e12"]
 
 [ext_resource type="Script" uid="uid://b8rhd7lg4vlnn" path="res://LMS/Scripts/SpeakerCtrl.gd" id="1_d005a"]
 [ext_resource type="Texture2D" uid="uid://c2taef01gys07" path="res://LMS/Creative Assets/Textures/Tex_DottedLine.tres" id="2_3lrdt"]
+[ext_resource type="AudioStream" uid="uid://briqts5jark4b" path="res://LMS/Audio/SFX/SFX_SpeakerPulse.ogg" id="2_ig4bs"]
 [ext_resource type="Texture2D" uid="uid://ca880n1rn87pl" path="res://LMS/Creative Assets/Textures/Indicator.png" id="3_3lrdt"]
-
-[sub_resource type="Gradient" id="Gradient_67c5i"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 0.109804, 0.827451, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nkohr"]
-noise_type = 2
-frequency = 0.0016
-offset = Vector3(-254.05, -237.7, 0)
-fractal_type = 0
-fractal_octaves = 3
-cellular_jitter = 0.0
-cellular_return_type = 4
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2idcr"]
-color_ramp = SubResource("Gradient_67c5i")
-noise = SubResource("FastNoiseLite_nkohr")
+[ext_resource type="Texture2D" uid="uid://fdg2wmt4pyhl" path="res://LMS/Creative Assets/Speaker.png" id="3_lgdwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67c5i"]
-size = Vector2(326, 265)
+size = Vector2(140, 117)
 
 [node name="Speaker" type="Node2D" node_paths=PackedStringArray("_Indicator")]
-z_index = 5
+z_index = 11
 script = ExtResource("1_d005a")
-_SpeakerStrength = 650.0
+_SpeakerStrength = 400.0
+_SFXSpeakerPulse = ExtResource("2_ig4bs")
 _Indicator = NodePath("Indicator")
 _LineTexture = ExtResource("2_3lrdt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.617188, 0.226562)
-texture = SubResource("NoiseTexture2D_2idcr")
-
-[node name="Direction Indicator" type="Polygon2D" parent="Sprite2D"]
-position = Vector2(0, -211.862)
-scale = Vector2(5.46836, 13.9229)
-color = Color(0.12549, 0.717647, 0.921569, 1)
-polygon = PackedVector2Array(-8, -3.8147e-06, 8, -3.8147e-06, -4.76837e-07, -16)
-uv = PackedVector2Array(-16, 8, 0, 8, -8, -8)
+texture_filter = 1
+rotation = 1.57079
+texture = ExtResource("3_lgdwu")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -190.5)
+position = Vector2(0, -84)
 shape = SubResource("RectangleShape2D_67c5i")
 
 [node name="Indicator" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(1, 0.666667, 0.368627, 1)
 z_index = 15
 z_as_relative = false
 rotation = 1.5708
-scale = Vector2(0.588222, 0.773522)
+scale = Vector2(0.24, 0.155)
 texture = ExtResource("3_3lrdt")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEnteredArea"]

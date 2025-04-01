@@ -1,20 +1,114 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddfwsbaoopsds"]
+[gd_scene load_steps=8 format=3 uid="uid://ddfwsbaoopsds"]
 
-[ext_resource type="Texture2D" uid="uid://cwhiwl36bsaqg" path="res://LMS/Creative Assets/Player.png" id="1_5ijyg"]
 [ext_resource type="Script" uid="uid://cj8hxmfau67k1" path="res://LMS/Scripts/Collectable.gd" id="1_xyifv"]
+[ext_resource type="AudioStream" uid="uid://gt3bllbcqwms" path="res://LMS/Audio/SFX/SFX_Pickup.ogg" id="2_glfg7"]
+[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Vinyl.png" id="2_xyifv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uscx"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_xyifv"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_glfg7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58pjl"]
+_data = {
+&"Idle": SubResource("Animation_xyifv"),
+&"RESET": SubResource("Animation_glfg7")
+}
 
 [node name="Collectable" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_xyifv")
+_SFXCollect = ExtResource("2_glfg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8uscx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.89389, 0.89389, 0, 1)
 z_index = 5
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("1_5ijyg")
+texture_filter = 1
+texture = ExtResource("2_xyifv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_58pjl")
+}
+autoplay = "Idle"

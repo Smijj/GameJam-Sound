@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy75ah2b3tvov"]
+[gd_scene load_steps=5 format=3 uid="uid://cy75ah2b3tvov"]
 
 [ext_resource type="Script" uid="uid://c6ohbs4a5g8m2" path="res://LMS/Scripts/CompleteLevel.gd" id="1_x3kse"]
+[ext_resource type="Texture2D" uid="uid://ccwu8ymo5436i" path="res://LMS/Creative Assets/Flagpole.png" id="2_c7h3j"]
+[ext_resource type="AudioStream" uid="uid://bf7o4ja85fu0g" path="res://LMS/Audio/SFX/SFX_Win_newthingget_Normalized.ogg" id="2_y7u84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqj0"]
-size = Vector2(150, 150)
+size = Vector2(38, 64)
 
 [node name="LevelComplete" type="Area2D"]
+z_index = 11
+z_as_relative = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_x3kse")
+_SFXLevelComplete = ExtResource("2_y7u84")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, -32)
+texture = ExtResource("2_c7h3j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -33)
 shape = SubResource("RectangleShape2D_0yqj0")

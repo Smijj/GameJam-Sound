@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://04ddwvxogg0j" path="res://LMS/Scripts/PlayerCtrl.gd" id="1_vvo2y"]
 [ext_resource type="Texture2D" uid="uid://chdej7t0vkfwq" path="res://LMS/Creative Assets/Textures/Space_Key_Light.png" id="2_5hkj0"]
-[ext_resource type="AudioStream" uid="uid://s3wx5tnggw54" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_01.ogg" id="2_csvf6"]
+[ext_resource type="AudioStream" uid="uid://s3wx5tnggw54" path="res://LMS/Audio/SFX/SFX_Hit_01.ogg" id="2_csvf6"]
 [ext_resource type="Texture2D" uid="uid://bydi4ipy4o4iy" path="res://LMS/Creative Assets/Otomatone_Closed.png" id="2_ddlqi"]
 [ext_resource type="AudioStream" uid="uid://crtrrwmpix2p1" path="res://LMS/Audio/SFX/SFX_PlayerDie.ogg" id="2_yts6p"]
-[ext_resource type="AudioStream" uid="uid://drt1lsbd4b6k3" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_02.ogg" id="3_218nu"]
+[ext_resource type="AudioStream" uid="uid://drt1lsbd4b6k3" path="res://LMS/Audio/SFX/SFX_Hit_02.ogg" id="3_218nu"]
 [ext_resource type="Texture2D" uid="uid://ci34240fryyog" path="res://LMS/Creative Assets/Otomaton_Open.png" id="3_teole"]
 [ext_resource type="Script" uid="uid://c4iel1tw6hdrp" path="res://LMS/Scripts/InteractIndicator.gd" id="3_yqhrn"]
-[ext_resource type="AudioStream" uid="uid://b70bktfxof75i" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_03.ogg" id="4_4lqkl"]
-[ext_resource type="AudioStream" uid="uid://caxm733opwan" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_04.ogg" id="5_qrwi8"]
-[ext_resource type="AudioStream" uid="uid://bj0iqc6yt3dro" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_05.ogg" id="6_cnv4l"]
-[ext_resource type="AudioStream" uid="uid://bb2p5xy7vkprr" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_06.ogg" id="7_eek2k"]
-[ext_resource type="AudioStream" uid="uid://dx8pdtd5cfcna" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_07.ogg" id="8_ukymb"]
-[ext_resource type="AudioStream" uid="uid://baeg2r8dl0twt" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_08.ogg" id="9_wtyjc"]
-[ext_resource type="AudioStream" uid="uid://c78tiauohagao" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_09.ogg" id="10_swgv7"]
-[ext_resource type="AudioStream" uid="uid://deavxvpr6q8mn" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_10.ogg" id="11_cbn2b"]
-[ext_resource type="AudioStream" uid="uid://bplgmwsey6apg" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_11.ogg" id="12_jti8b"]
-[ext_resource type="AudioStream" uid="uid://bwd3hi01eami2" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_12.ogg" id="13_qoaen"]
-[ext_resource type="AudioStream" uid="uid://cch8scytg8hiu" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_13.ogg" id="14_efj6s"]
-[ext_resource type="AudioStream" uid="uid://cy8birvuxv3xl" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_14.ogg" id="15_mvvvm"]
-[ext_resource type="AudioStream" uid="uid://d2ii3wabup2im" path="res://LMS/Audio/SFX/SFX_HIT/SFX_StoneHit02.ogg" id="16_4lqkl"]
+[ext_resource type="AudioStream" uid="uid://b70bktfxof75i" path="res://LMS/Audio/SFX/SFX_Hit_03.ogg" id="4_4lqkl"]
+[ext_resource type="AudioStream" uid="uid://caxm733opwan" path="res://LMS/Audio/SFX/SFX_Hit_04.ogg" id="5_qrwi8"]
+[ext_resource type="AudioStream" uid="uid://bj0iqc6yt3dro" path="res://LMS/Audio/SFX/SFX_Hit_05.ogg" id="6_cnv4l"]
+[ext_resource type="AudioStream" uid="uid://bb2p5xy7vkprr" path="res://LMS/Audio/SFX/SFX_Hit_06.ogg" id="7_eek2k"]
+[ext_resource type="AudioStream" uid="uid://dx8pdtd5cfcna" path="res://LMS/Audio/SFX/SFX_Hit_07.ogg" id="8_ukymb"]
+[ext_resource type="AudioStream" uid="uid://baeg2r8dl0twt" path="res://LMS/Audio/SFX/SFX_Hit_08.ogg" id="9_wtyjc"]
+[ext_resource type="AudioStream" uid="uid://c78tiauohagao" path="res://LMS/Audio/SFX/SFX_Hit_09.ogg" id="10_swgv7"]
+[ext_resource type="AudioStream" uid="uid://deavxvpr6q8mn" path="res://LMS/Audio/SFX/SFX_Hit_10.ogg" id="11_cbn2b"]
+[ext_resource type="AudioStream" uid="uid://bplgmwsey6apg" path="res://LMS/Audio/SFX/SFX_Hit_11.ogg" id="12_jti8b"]
+[ext_resource type="AudioStream" uid="uid://bwd3hi01eami2" path="res://LMS/Audio/SFX/SFX_Hit_12.ogg" id="13_qoaen"]
+[ext_resource type="AudioStream" uid="uid://cch8scytg8hiu" path="res://LMS/Audio/SFX/SFX_Hit_13.ogg" id="14_efj6s"]
+[ext_resource type="AudioStream" uid="uid://cy8birvuxv3xl" path="res://LMS/Audio/SFX/SFX_Hit_14.ogg" id="15_mvvvm"]
+[ext_resource type="AudioStream" uid="uid://crfjo8w40wuj7" path="res://LMS/Audio/SFX/SFX_StoneHit.ogg" id="16_218nu"]
 [ext_resource type="AudioStream" uid="uid://bx47ob2he61jf" path="res://LMS/Audio/SFX/SFX_StoneRolling.ogg" id="18_4lqkl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ddlqi"]
@@ -39,8 +39,9 @@ script = ExtResource("1_vvo2y")
 _TorqueImpluse = 1500.0
 _Torque = 3000.0
 _AirVelocity = 100.0
+_WowSpeed = 250.0
 _SFXHitList = Array[AudioStream]([ExtResource("2_csvf6"), ExtResource("3_218nu"), ExtResource("4_4lqkl"), ExtResource("5_qrwi8"), ExtResource("6_cnv4l"), ExtResource("7_eek2k"), ExtResource("8_ukymb"), ExtResource("9_wtyjc"), ExtResource("10_swgv7"), ExtResource("11_cbn2b"), ExtResource("12_jti8b"), ExtResource("13_qoaen"), ExtResource("14_efj6s"), ExtResource("15_mvvvm")])
-_SFXStoneHit = ExtResource("16_4lqkl")
+_SFXStoneHit = ExtResource("16_218nu")
 _SFXDie = ExtResource("2_yts6p")
 _SFXRolling = ExtResource("18_4lqkl")
 _PlayerSpriteDefault = ExtResource("2_ddlqi")
@@ -56,7 +57,6 @@ texture = ExtResource("2_ddlqi")
 shape = SubResource("CircleShape2D_mi6mn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
 
 [node name="Interact Indicator" type="Sprite2D" parent="." node_paths=PackedStringArray("_FollowTarget")]
 top_level = true
@@ -67,3 +67,6 @@ texture = ExtResource("2_5hkj0")
 offset = Vector2(0, 80)
 script = ExtResource("3_yqhrn")
 _FollowTarget = NodePath("..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_4lqkl")

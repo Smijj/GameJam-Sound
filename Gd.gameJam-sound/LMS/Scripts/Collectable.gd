@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var _SFXCollect: AudioStream
+
 func _ready() -> void:
 	# Don't show collectable if its already been collected
 	if LevelManager.CurrentLevelData.Collectables.has(get_path()): 
@@ -10,10 +12,12 @@ func _ready() -> void:
 	
 func _OnBodyEnteredArea(body: Node2D) -> void:
 	# Collect
-	LevelManager.CurrentLevelData.Collectables.append(get_path())
-	LevelManager.SaveLevelData()
+	if !LevelManager.CurrentLevelData.Collectables.has(get_path()):
+		LevelManager.CurrentLevelData.Collectables.append(get_path())
+		LevelManager.SaveLevelData()
 	
-	# TODO: Play collect SFX
+	# Play collect SFX
+	AudioHandler.PlaySFX(_SFXCollect)
 	
 	_Hide()
 

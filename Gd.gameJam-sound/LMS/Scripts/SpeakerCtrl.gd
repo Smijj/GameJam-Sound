@@ -4,6 +4,8 @@ extends Node2D
 @export var _SpeakerStrength: float = 1000
 var _CurrentPlayer: RigidBody2D = null
 
+@export var _SFXSpeakerPulse: AudioStream
+
 @export var _Indicator: Sprite2D
 
 @export var _LineColour: Color = Color.LIME_GREEN
@@ -58,6 +60,9 @@ func OnBodyExitedArea(body: Node2D) -> void:
 func _PushPlayer() -> void:
 	_CurrentPlayer.linear_velocity = Vector2.ZERO
 	_CurrentPlayer.apply_impulse(transform.basis_xform(Vector2.UP) * _SpeakerStrength)
+	
+	# Play SFX
+	AudioHandler.PlaySFX(_SFXSpeakerPulse)
 
 func _DrawLineIndicatorToTarget(target: Vector2) -> void:
 	if _LineIndicator.visible == false:
