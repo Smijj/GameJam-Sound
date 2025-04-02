@@ -50,7 +50,7 @@ func _ready() -> void:
 	AudioHandler.CurrentTrackFinished.connect(_OnAudioTrackFinished)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Pause"):
+	if StateManager.IsGameplay() && event.is_action_pressed("Pause"):
 		Paused = !Paused
 
 func _OnLevelLoaded() -> void:
@@ -58,6 +58,7 @@ func _OnLevelLoaded() -> void:
 
 func _OnLevelQuit() -> void:
 	MenuManager.OpenMenu("LevelSelect")
+	#StateManager.GameState = StateManager.States.MENU
 
 func _OnMenusClosed() -> void:
 	Paused = false
