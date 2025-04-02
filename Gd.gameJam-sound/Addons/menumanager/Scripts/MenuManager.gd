@@ -8,7 +8,7 @@ var _Scenes: Dictionary[String, CanvasLayer] = {}
 var _CurrentMenu:String = ""
 var _MenuHistory:Array[String] = []
 
-func _init() -> void:
+func _ready() -> void:
 	# Preload all the packed menu scenes
 	for key in _MenusResource.Scenes.keys():
 		var menuScene:PackedScene = _MenusResource.Scenes[key]

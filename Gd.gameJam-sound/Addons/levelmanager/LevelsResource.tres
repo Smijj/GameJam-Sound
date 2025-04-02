@@ -13,14 +13,7 @@ PackedLevel = ExtResource("2_858hk")
 LevelName = "X"
 Completed = false
 PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({
-NodePath("/root/LevelManager/Level/Collectables/Collectable"): false,
-NodePath("/root/LevelManager/Level/Collectables/Collectable4"): false,
-NodePath("/root/LevelManager/Level/Collectables/Collectable5"): false,
-NodePath("/root/LevelManager/Level/Collectables/Collectable6"): false,
-NodePath("/root/LevelManager/Level/Collectables/Collectable2"): false,
-NodePath("/root/LevelManager/Level/Collectables/Collectable3"): false
-})
+Collectables = Dictionary[NodePath, bool]({})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_chg41"]

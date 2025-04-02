@@ -2,7 +2,7 @@
 class_name LevelsResource
 extends Resource
 
-@export_tool_button("Save Data", "Callable") var save_action:Callable = _SaveData
+#@export_tool_button("Save Data", "Callable") var save_action:Callable = _SaveData
 @export_tool_button("CLEAR Saved Data", "Callable") var reset_action:Callable = _ResetSavedData
 @export var Levels: Array[LevelData] = []
 

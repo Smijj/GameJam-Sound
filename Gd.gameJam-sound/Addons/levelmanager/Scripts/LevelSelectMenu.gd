@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var _LevelInteractablesContainer: GridContainer
 @export var _LevelInteractablePrefab: PackedScene
 
-#var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
+#var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres") as LevelsResource
 
 var _Buttons:Array[Button] = []
 var _LevelInteractables: Dictionary[LevelData, LevelInteractable] = {}
@@ -13,8 +13,9 @@ func _ready() -> void:
 	visibility_changed.connect(_ReloadInteractables)
 
 func _SetupLevelInteractables() -> void:
-	if !_LevelInteractablesContainer || LevelManager._LevelsResource.Levels.is_empty(): return
-	for levelData:LevelData in LevelManager._LevelsResource.Levels:
+	var levelsResource: LevelsResource = await load("res://Addons/levelmanager/LevelsResource.tres") as LevelsResource
+	if !_LevelInteractablesContainer || levelsResource.Levels.is_empty(): return
+	for levelData:LevelData in levelsResource.Levels:
 		_SetupInteractable(levelData)
 
 func _SetupInteractable(levelData: LevelData):

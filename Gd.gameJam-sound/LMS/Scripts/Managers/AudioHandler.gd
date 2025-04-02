@@ -25,7 +25,7 @@ func _init() -> void:
 
 func _process(delta: float) -> void:
 	if !_CurrentTrack || !_MusicAudioPlayer: return
-	if _CurrentTrack && _MusicAudioPlayer.get_playback_position() == 0:
+	if _MusicAudioPlayer.get_playback_position() >= _CurrentTrack.get_length() - 1:
 		TrackFinished()
 
 """

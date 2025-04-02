@@ -10,16 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GD.GameJam-Sound"
+config/name="Bop 'n Roll"
+config/version="0.0"
 run/main_scene="uid://blpmrdubuxgy7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0509804, 0.168627, 0.270588, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
-StateManager="*res://Addons/statemanager/Scripts/StateManager.gd"
-AudioHandler="*res://LMS/Scripts/Managers/AudioHandler.gd"
 SignalBus="*res://LMS/Scripts/Managers/SignalBus.gd"
+AudioHandler="*res://LMS/Scripts/Managers/AudioHandler.gd"
+StateManager="*res://Addons/statemanager/Scripts/StateManager.gd"
 LevelManager="*res://Addons/levelmanager/Scripts/LevelManager.gd"
 MenuManager="*res://Addons/menumanager/Scripts/MenuManager.gd"
 GameManager="*res://LMS/Scripts/Managers/GameManager.gd"
@@ -28,6 +30,7 @@ GameManager="*res://LMS/Scripts/Managers/GameManager.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
