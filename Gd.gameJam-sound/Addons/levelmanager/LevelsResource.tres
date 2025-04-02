@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=12 format=3 uid="uid://eqgb47r71wgd"]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=12 format=3 uid="uid://dpbdd32a6lxdh"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
 [ext_resource type="PackedScene" uid="uid://dgt638vbyhkkx" path="res://LMS/Scenes/Levels/Level_Test.tscn" id="2_858hk"]
@@ -31,7 +31,7 @@ PackedLevel = ExtResource("4_3krqp")
 LevelName = "Level 1"
 Completed = true
 PersonalCompleteTime = 4.64917
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2"), NodePath("/root/LevelManager/Level/Collectables/Collectable3"), NodePath("/root/LevelManager/Level/Collectables/Collectable5")])
+Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2"), NodePath("/root/LevelManager/Level/Collectables/Collectable3"), NodePath("/root/LevelManager/Level/Collectables/Collectable5"), NodePath("/root/LevelManager/Level/Collectables/Collectable4")])
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_3ap2o"]
@@ -49,7 +49,7 @@ PackedLevel = ExtResource("3_chg41")
 LevelName = "Level"
 Completed = true
 PersonalCompleteTime = 4.33313
-Collectables = Array[NodePath]([])
+Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2")])
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [resource]
