@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://232bwhdwsoge" path="res://Addons/levelmanager/Scripts/LevelSelectMenu.gd" id="1_up1gq"]
 [ext_resource type="PackedScene" uid="uid://drvmigr8dig0n" path="res://Addons/levelmanager/Prefabs/LevelInteractable.tscn" id="2_0mbjq"]
-[ext_resource type="Script" uid="uid://wsh3jb8yg5y8" path="res://Addons/menumanager/Scripts/BtnBack.gd" id="3_odyq2"]
+[ext_resource type="Script" uid="uid://c3m4v6c64xy7p" path="res://Addons/menumanager/Scripts/BtnOpenMenu.gd" id="3_up1gq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_up1gq"]
 
@@ -75,7 +75,8 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
-script = ExtResource("3_odyq2")
+script = ExtResource("3_up1gq")
+_MenuName = "Start"
 
 [node name="Spacer2" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

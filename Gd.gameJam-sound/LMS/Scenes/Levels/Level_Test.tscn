@@ -29,7 +29,7 @@ position = Vector2(45, -54)
 rotation = -1.57079
 
 [node name="Speaker4" parent="Interactables" instance=ExtResource("5_1ghbm")]
-position = Vector2(305, 81)
+position = Vector2(306, 70)
 rotation = -0.523598
 
 [node name="Collectables" type="Node2D" parent="."]
@@ -39,6 +39,12 @@ position = Vector2(-232, -63)
 
 [node name="Collectable4" parent="Collectables" instance=ExtResource("6_5rdwu")]
 position = Vector2(-108, -207)
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource("6_5rdwu")]
+position = Vector2(94, -191)
+
+[node name="Collectable6" parent="Collectables" instance=ExtResource("6_5rdwu")]
+position = Vector2(94, -191)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("6_5rdwu")]
 position = Vector2(-232, -191)

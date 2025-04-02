@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://s3wx5tnggw54" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_01.ogg" id="2_csvf6"]
 [ext_resource type="AudioStream" uid="uid://crtrrwmpix2p1" path="res://LMS/Audio/SFX/SFX_PlayerDie.ogg" id="2_yts6p"]
 [ext_resource type="AudioStream" uid="uid://drt1lsbd4b6k3" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_02.ogg" id="3_218nu"]
-[ext_resource type="Texture2D" uid="uid://bgdrfcxp7w2hl" path="res://LMS/Creative Assets/Otomaton_Open.png" id="3_teole"]
+[ext_resource type="Texture2D" uid="uid://bgdrfcxp7w2hl" path="res://LMS/Creative Assets/Art/Otomaton_Open.png" id="3_teole"]
 [ext_resource type="Script" uid="uid://c4iel1tw6hdrp" path="res://LMS/Scripts/InteractIndicator.gd" id="3_yqhrn"]
 [ext_resource type="AudioStream" uid="uid://b70bktfxof75i" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_03.ogg" id="4_4lqkl"]
 [ext_resource type="AudioStream" uid="uid://caxm733opwan" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_04.ogg" id="5_qrwi8"]
@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cy8birvuxv3xl" path="res://LMS/Audio/SFX/SFX_HIT/SFX_Hit_14.ogg" id="15_mvvvm"]
 [ext_resource type="AudioStream" uid="uid://d2ii3wabup2im" path="res://LMS/Audio/SFX/SFX_HIT/SFX_StoneHit02.ogg" id="16_4lqkl"]
 [ext_resource type="AudioStream" uid="uid://bx47ob2he61jf" path="res://LMS/Audio/SFX/SFX_StoneRolling.ogg" id="18_4lqkl"]
-[ext_resource type="Texture2D" uid="uid://ddnqhb6lix1do" path="res://LMS/Creative Assets/Otomaton_Closed.png" id="19_4lqkl"]
+[ext_resource type="Texture2D" uid="uid://ddnqhb6lix1do" path="res://LMS/Creative Assets/Art/Otomaton_Closed.png" id="19_4lqkl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ddlqi"]
 
@@ -31,7 +31,7 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4lqkl"]
 radius = 250.0
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("_PlayerSprite") groups=["Player"]]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("_SpeakerShapeCast", "_PlayerSprite") groups=["Player"]]
 z_index = 10
 collision_layer = 2
 mass = 0.5
@@ -47,9 +47,10 @@ _SFXHitList = Array[AudioStream]([ExtResource("2_csvf6"), ExtResource("3_218nu")
 _SFXStoneHit = ExtResource("16_4lqkl")
 _SFXDie = ExtResource("2_yts6p")
 _SFXRolling = ExtResource("18_4lqkl")
+_SpeakerShapeCast = NodePath("SpeakerDetector")
+_PlayerSprite = NodePath("Sprite2D")
 _PlayerSpriteDefault = ExtResource("19_4lqkl")
 _PlayerSpriteSpeed = ExtResource("3_teole")
-_PlayerSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -71,8 +72,9 @@ texture = ExtResource("2_5hkj0")
 offset = Vector2(0, 80)
 script = ExtResource("3_yqhrn")
 _FollowTarget = NodePath("..")
+_InteractColour = Color(1, 0.666667, 0.368627, 1)
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="SpeakerDetector" type="ShapeCast2D" parent="."]
 shape = SubResource("CircleShape2D_4lqkl")
 target_position = Vector2(0, 0)
 max_results = 10

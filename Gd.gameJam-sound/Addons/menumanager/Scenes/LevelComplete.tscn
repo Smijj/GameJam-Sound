@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bb1kkkhmhx2p6"]
 
-[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Vinyl.png" id="1_ho7lc"]
+[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Art/Vinyl.png" id="1_ho7lc"]
 
 [sub_resource type="GDScript" id="GDScript_ho7lc"]
 script/source = "extends Label
@@ -169,7 +169,7 @@ script = SubResource("GDScript_tm4dx")
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("1_ho7lc")
-expand_mode = 2
+expand_mode = 3
 stretch_mode = 4
 
 [node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/CollectablesContainer"]

@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @export var _FollowTarget: Node2D
+@export var _InteractColour: Color = Color.YELLOW
 
 var _FadeTween: Tween = null
 @export var _FadeTime: float = 0.1
@@ -14,7 +15,7 @@ func _process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
-		self_modulate = Color.YELLOW
+		self_modulate = _InteractColour
 	elif event.is_action_released("Interact"):
 		self_modulate = Color.WHITE
 

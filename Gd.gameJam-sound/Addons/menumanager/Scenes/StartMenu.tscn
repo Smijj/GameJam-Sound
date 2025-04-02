@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://g6r5rxpgx4d7"]
+[gd_scene load_steps=5 format=3 uid="uid://g6r5rxpgx4d7"]
 
+[ext_resource type="FontFile" uid="uid://ca56ls3jxvntq" path="res://LMS/Creative Assets/Theme/Her Mana Two .ttf" id="1_dedo3"]
 [ext_resource type="Script" uid="uid://c3m4v6c64xy7p" path="res://Addons/menumanager/Scripts/BtnOpenMenu.gd" id="1_n0yc8"]
 [ext_resource type="Script" uid="uid://bkuwso3loy4kl" path="res://Addons/menumanager/Scripts/BtnQuit.gd" id="2_dedo3"]
 
@@ -38,13 +39,14 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 100
-text = "Bob 'n Roll"
+text = "Bop 'n Roll"
 horizontal_alignment = 1
 
 [node name="Title2" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("1_dedo3")
+theme_override_font_sizes/font_size = 60
 text = "By Declan Smyth & Skye Lavelle"
 horizontal_alignment = 1
 

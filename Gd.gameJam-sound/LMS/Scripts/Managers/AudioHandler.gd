@@ -1,5 +1,7 @@
 extends Node3D
 
+signal CurrentTrackFinished
+
 const MAX_SFX_COUNT: int = 15
 const SFX_BUS: String = "SFX"
 var _SFXAudioPlayers: Array[AudioStreamPlayer] = []
@@ -15,10 +17,16 @@ var _TransientAudioPlayer: AudioStreamPlayer = null
 var _MusicFade: Tween = null
 
 var _CurrentTrack: AudioStream = null
+var IsMusicPlaying:bool = _CurrentTrack == null
 
 func _init() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	_PreloadAudioPlayers()
+
+func _process(delta: float) -> void:
+	if !_CurrentTrack || !_MusicAudioPlayer: return
+	if _CurrentTrack && _MusicAudioPlayer.get_playback_position() == 0:
+		TrackFinished()
 
 """
 Instantiates MAX_SFX_COUNT number of AudioPlayers that are used like an object pool for SFX.
@@ -87,6 +95,8 @@ func MusicIsPlaying() -> bool:
 func PlayMusic(music:AudioStream, bus:String = MUSIC_BUS) -> void:
 	if !_MusicAudioPlayer || !music || music == _CurrentTrack: return
 	
+	print("Playing: ", music.resource_path)
+	
 	# if there is no music currently playing or the transient audioplayer doesnt exist, just set the music and play it.
 	if !_TransientAudioPlayer || !_CurrentTrack: 
 		_MusicAudioPlayer.stream = music
@@ -125,12 +135,14 @@ func PlayMusic(music:AudioStream, bus:String = MUSIC_BUS) -> void:
 		_MusicAudioPlayer.play(_TransientAudioPlayer.get_playback_position())
 		# Stop the Transient Player
 		_TransientAudioPlayer.stop()
+		
+		# BUG: Finished signal currently broken
+		#_MusicAudioPlayer.finished.connect(TrackFinished)
 		)
 	
 	# Set Current Music
 	_CurrentTrack = music
-	
-	_MusicAudioPlayer.finished.connect(TrackFinished)
 
 func TrackFinished() -> void:
 	_CurrentTrack = null
+	CurrentTrackFinished.emit()

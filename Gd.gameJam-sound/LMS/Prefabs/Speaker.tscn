@@ -1,17 +1,70 @@
-[gd_scene load_steps=8 format=3 uid="uid://du1tamw661e12"]
+[gd_scene load_steps=16 format=3 uid="uid://du1tamw661e12"]
 
 [ext_resource type="Script" uid="uid://b8rhd7lg4vlnn" path="res://LMS/Scripts/SpeakerCtrl.gd" id="1_d005a"]
-[ext_resource type="Texture2D" uid="uid://c2taef01gys07" path="res://LMS/Creative Assets/Textures/Tex_DottedLine.tres" id="2_3lrdt"]
 [ext_resource type="AudioStream" uid="uid://briqts5jark4b" path="res://LMS/Audio/SFX/SFX_SpeakerPulse.ogg" id="2_ig4bs"]
 [ext_resource type="Texture2D" uid="uid://ca880n1rn87pl" path="res://LMS/Creative Assets/Textures/Indicator.png" id="3_3lrdt"]
-[ext_resource type="Texture2D" uid="uid://fdg2wmt4pyhl" path="res://LMS/Creative Assets/Speaker.png" id="3_lgdwu"]
+[ext_resource type="Texture2D" uid="uid://dslson2vtfsg3" path="res://LMS/Creative Assets/Textures/DottedLine_Thin.png" id="3_jjjan"]
+[ext_resource type="Texture2D" uid="uid://fdg2wmt4pyhl" path="res://LMS/Creative Assets/Art/Speaker.png" id="3_lgdwu"]
+[ext_resource type="Texture2D" uid="uid://cjjst5peo1spx" path="res://LMS/Creative Assets/NoteParticles2.png" id="6_3hv83"]
+[ext_resource type="Texture2D" uid="uid://chewd2pkmlx1c" path="res://LMS/Creative Assets/NoteParticles1.png" id="7_jjjan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig4bs"]
 size = Vector2(60, 56)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ig4bs"]
 radius = 64.0
-height = 152.0
+height = 192.0
+
+[sub_resource type="Curve" id="Curve_ig4bs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.207031, 0.925041), 0.0, -0.216422, 0, 0, Vector2(0.414062, 0.625206), 0.0, 0.0, 0, 0, Vector2(0.644531, 1), 0.0, 0.0, 0, 0, Vector2(0.871094, 0.860791), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.24217, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_jjjan"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.713043, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_3hv83"]
+offsets = PackedFloat32Array(0, 0.573913)
+colors = PackedColorArray(1, 0.666667, 0.368627, 1, 0.329412, 0.305882, 0.407843, 1)
+
+[sub_resource type="Animation" id="Animation_jjjan"]
+resource_name = "Idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.37, 0.45, 0.53, 1.12, 1.2, 1.28, 1.47, 1.55, 1.63, 1.91, 1.99, 2.07, 2.55, 2.63, 2.71, 2.96, 3.04, 3.12, 3.31, 3.39, 3.47, 3.74, 3.82, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1), Vector2(1, 1), Vector2(1.22, 1.22), Vector2(1, 1), Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1), Vector2(1, 1), Vector2(1.265, 1.265), Vector2(1, 1), Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1), Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1), Vector2(1, 1), Vector2(1.11, 1.11), Vector2(1, 1), Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1), Vector2(1, 1), Vector2(1.155, 1.155), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xybme"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xs773"]
+_data = {
+&"Idle": SubResource("Animation_jjjan"),
+&"RESET": SubResource("Animation_xybme")
+}
 
 [node name="Speaker" type="Node2D" node_paths=PackedStringArray("_Indicator")]
 z_index = 11
@@ -19,7 +72,8 @@ script = ExtResource("1_d005a")
 _SpeakerStrength = 400.0
 _SFXSpeakerPulse = ExtResource("2_ig4bs")
 _Indicator = NodePath("Indicator")
-_LineTexture = ExtResource("2_3lrdt")
+_LineColour = Color(1, 0.666667, 0.368627, 1)
+_LineTexture = ExtResource("3_jjjan")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -46,8 +100,72 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2(0, -62)
+position = Vector2(0, -79)
 shape = SubResource("CapsuleShape2D_ig4bs")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -21)
+amount = 1
+texture = ExtResource("6_3hv83")
+lifetime = 0.5
+preprocess = 0.75
+explosiveness = 0.95
+randomness = 1.0
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -50)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = 50.0
+angular_velocity_max = 70.0
+damping_min = 3.0
+damping_max = 5.0
+scale_amount_min = 0.8
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_ig4bs")
+color = Color(1, 1, 1, 0.67451)
+color_ramp = SubResource("Gradient_jjjan")
+color_initial_ramp = SubResource("Gradient_3hv83")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -21)
+amount = 2
+texture = ExtResource("7_jjjan")
+lifetime = 0.5
+preprocess = 0.75
+explosiveness = 0.95
+randomness = 0.2
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -50)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = 50.0
+angular_velocity_max = 70.0
+damping_min = 3.0
+damping_max = 5.0
+scale_amount_min = 0.8
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_ig4bs")
+color = Color(1, 1, 1, 0.67451)
+color_ramp = SubResource("Gradient_jjjan")
+color_initial_ramp = SubResource("Gradient_3hv83")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xs773")
+}
+autoplay = "Idle"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="OnBodyEnteredArea"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="OnBodyExitedArea"]

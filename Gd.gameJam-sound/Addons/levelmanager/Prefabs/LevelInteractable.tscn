@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://drvmigr8dig0n"]
 
 [ext_resource type="Script" uid="uid://b16sho728x34v" path="res://Addons/levelmanager/Scripts/LevelInteractable.gd" id="1_rltuk"]
-[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Vinyl.png" id="2_v5x1i"]
+[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Art/Vinyl.png" id="2_v5x1i"]
 
 [node name="LevelInteractable" type="VBoxContainer" node_paths=PackedStringArray("button", "labelTime", "labelCollectables")]
 offset_right = 245.0

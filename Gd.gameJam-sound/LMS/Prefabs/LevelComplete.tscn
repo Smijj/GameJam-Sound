@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cy75ah2b3tvov"]
 
 [ext_resource type="Script" uid="uid://c6ohbs4a5g8m2" path="res://LMS/Scripts/CompleteLevel.gd" id="1_x3kse"]
-[ext_resource type="Texture2D" uid="uid://ccwu8ymo5436i" path="res://LMS/Creative Assets/Flagpole.png" id="2_c7h3j"]
+[ext_resource type="Texture2D" uid="uid://ccwu8ymo5436i" path="res://LMS/Creative Assets/Art/Flagpole.png" id="2_c7h3j"]
 [ext_resource type="AudioStream" uid="uid://bf7o4ja85fu0g" path="res://LMS/Audio/SFX/SFX_Win_newthingget_Normalized.ogg" id="2_y7u84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqj0"]

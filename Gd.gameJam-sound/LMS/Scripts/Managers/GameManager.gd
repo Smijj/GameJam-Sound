@@ -14,6 +14,12 @@ func GetGUIInstance() -> GUI:
 	if !instantiatedGUI: return null
 	return instantiatedGUI
 
+var _Music: Array[AudioStream] = [
+	preload("res://LMS/Audio/Music/Music_Bouncing-Baal_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Random-Race_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_String-Theory_Normalised.ogg") as AudioStream
+]
+
 var Paused: bool = false :
 	set (value): 
 		# Don't paused anything unless the GameState is Gameplay
@@ -32,14 +38,16 @@ var Paused: bool = false :
 signal OnPaused
 
 func _init() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = PROCESS_MODE_ALWAYS
 
 func _ready() -> void:
 	MenuManager.OpenMenu("Start")
+	AudioHandler.PlayMusic(_Music.pick_random())
 	
 	LevelManager.OnLevelLoaded.connect(_OnLevelLoaded)
 	LevelManager.OnLevelQuit.connect(_OnLevelQuit)
 	MenuManager.OnMenusClosed.connect(_OnMenusClosed)
+	AudioHandler.CurrentTrackFinished.connect(_OnAudioTrackFinished)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
@@ -49,7 +57,10 @@ func _OnLevelLoaded() -> void:
 	MenuManager.CloseMenus(false)
 
 func _OnLevelQuit() -> void:
-	MenuManager.OpenMenu("Start")
+	MenuManager.OpenMenu("LevelSelect")
 
 func _OnMenusClosed() -> void:
 	Paused = false
+
+func _OnAudioTrackFinished() -> void:
+	AudioHandler.PlayMusic(_Music.pick_random())

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cj8hxmfau67k1" path="res://LMS/Scripts/Collectable.gd" id="1_xyifv"]
 [ext_resource type="AudioStream" uid="uid://gt3bllbcqwms" path="res://LMS/Audio/SFX/SFX_Pickup.ogg" id="2_glfg7"]
-[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Vinyl.png" id="2_xyifv"]
+[ext_resource type="Texture2D" uid="uid://b5sb8thm0ae60" path="res://LMS/Creative Assets/Art/Vinyl.png" id="2_xyifv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uscx"]
-radius = 5.0
+radius = 15.0
 
 [sub_resource type="Animation" id="Animation_xyifv"]
 resource_name = "Idle"

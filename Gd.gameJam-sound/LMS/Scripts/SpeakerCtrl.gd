@@ -27,6 +27,7 @@ func CreateLineIndicator() -> void:
 	_LineIndicator.texture = _LineTexture
 	_LineIndicator.texture_mode = Line2D.LINE_TEXTURE_TILE
 	_LineIndicator.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	_LineIndicator.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	_LineIndicator.z_index = -1
 	add_child(_LineIndicator)
 	_LineIndicator.visible = false
