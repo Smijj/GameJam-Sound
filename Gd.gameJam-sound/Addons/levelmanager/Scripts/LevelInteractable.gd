@@ -14,6 +14,12 @@ func SetTimeLabel(time:float) -> void:
 	if !labelTime: return
 	labelTime.text = "Best Time: " + str("%0.2f" % time,  "s")
 
-func SetCollectablesLabel(numberOfCollectables:int) -> void:
+func SetCollectablesLabel(collectables:Dictionary) -> void:
 	if !labelCollectables: return
-	labelCollectables.text = "x%d" % numberOfCollectables
+	labelCollectables.text = "%d/%s" % [_HowManyCollected(collectables.values()), _GetTotalCollectable(collectables.size())]
+
+func _HowManyCollected(values:Array[bool]) -> int:
+	return values.map(func(value): value == true).size()
+
+func _GetTotalCollectable(collectableCount:int) -> String:
+	return str(collectableCount) if collectableCount > 0 else "?"

@@ -23,11 +23,15 @@ func _SetupInteractable(levelData: LevelData):
 	var levelInteractable:LevelInteractable = _LevelInteractablePrefab.instantiate() as LevelInteractable
 	_LevelInteractablesContainer.add_child(levelInteractable)
 	
+	# Set level select button onClick function
 	levelInteractable.SetButton(levelData.LevelName, func(): LevelManager.LoadLevel(levelData))
 	
+	# Handle Personal Complete Time label's text  
 	if levelData.PersonalCompleteTime != -1:
 		levelInteractable.SetTimeLabel(levelData.PersonalCompleteTime)
-	levelInteractable.SetCollectablesLabel(levelData.Collectables.size())
+	
+	# Handle Collectables Time label's text  
+	levelInteractable.SetCollectablesLabel(levelData.Collectables)
 	
 	_LevelInteractables.set(levelData, levelInteractable)
 
@@ -41,7 +45,7 @@ func _ReloadInteractables() -> void:
 			_LevelInteractables[levelDatas[index]].SetTimeLabel(levelDatas[index].PersonalCompleteTime)
 		
 		# Handle Collectables label
-		_LevelInteractables[levelDatas[index]].SetCollectablesLabel(levelDatas[index].Collectables.size())
+		_LevelInteractables[levelDatas[index]].SetCollectablesLabel(levelDatas[index].Collectables)
 		
 		# Handle if the level button is disabled or not. Also focuses the button for the level the player has yet to complete
 		if index > 0:

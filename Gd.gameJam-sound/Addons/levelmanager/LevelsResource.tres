@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=12 format=3 uid="uid://dpbdd32a6lxdh"]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=11 format=3 uid="uid://c4rlklsn2uyyr"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
 [ext_resource type="PackedScene" uid="uid://dgt638vbyhkkx" path="res://LMS/Scenes/Levels/Level_Test.tscn" id="2_858hk"]
@@ -12,17 +12,13 @@ script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("2_858hk")
 LevelName = "Level Test"
 Completed = true
-PersonalCompleteTime = 1.8
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level 2/Collectables/Collectable3"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable2"), NodePath("/root/LevelManager/Level 2/Collectables/Collectable4")])
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_3krqp"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("3_chg41")
-LevelName = "Template"
-Completed = true
-PersonalCompleteTime = 3.22921
-Collectables = Array[NodePath]([])
+PersonalCompleteTime = 4.33625
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_chg41"]
@@ -30,8 +26,14 @@ script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("4_3krqp")
 LevelName = "Level 1"
 Completed = true
-PersonalCompleteTime = 4.64917
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2"), NodePath("/root/LevelManager/Level/Collectables/Collectable3"), NodePath("/root/LevelManager/Level/Collectables/Collectable5"), NodePath("/root/LevelManager/Level/Collectables/Collectable4")])
+PersonalCompleteTime = 4.73225
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable5"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_3ap2o"]
@@ -39,8 +41,14 @@ script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("5_chg41")
 LevelName = "Level 2"
 Completed = true
-PersonalCompleteTime = 0.832268
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2"), NodePath("/root/LevelManager/Level/Collectables/Collectable3"), NodePath("/root/LevelManager/Level/Collectables/Collectable4"), NodePath("/root/LevelManager/Level/Collectables/Collectable5")])
+PersonalCompleteTime = 21.0417
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable5"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_tdvqg"]
@@ -48,11 +56,16 @@ script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("3_chg41")
 LevelName = "Level"
 Completed = true
-PersonalCompleteTime = 4.33313
-Collectables = Array[NodePath]([NodePath("/root/LevelManager/Level/Collectables/Collectable"), NodePath("/root/LevelManager/Level/Collectables/Collectable2")])
+PersonalCompleteTime = 7.29968
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [resource]
 script = ExtResource("2_uds5b")
-Levels = Array[ExtResource("1_e8eg2")]([SubResource("Resource_0dyit"), SubResource("Resource_3krqp"), SubResource("Resource_chg41"), SubResource("Resource_3ap2o"), SubResource("Resource_tdvqg")])
+Levels = Array[ExtResource("1_e8eg2")]([SubResource("Resource_0dyit"), SubResource("Resource_chg41"), SubResource("Resource_3ap2o"), SubResource("Resource_tdvqg")])
 metadata/_custom_type_script = "uid://cgg1d75r0ukjs"
