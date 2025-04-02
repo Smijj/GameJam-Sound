@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var _LevelInteractablesContainer: GridContainer
 @export var _LevelInteractablePrefab: PackedScene
 
-var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
+#var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
 
 var _Buttons:Array[Button] = []
 var _LevelInteractables: Dictionary[LevelData, LevelInteractable] = {}
@@ -13,8 +13,8 @@ func _ready() -> void:
 	visibility_changed.connect(_ReloadInteractables)
 
 func _SetupLevelInteractables() -> void:
-	if !_LevelInteractablesContainer || _LevelsResource.Levels.is_empty(): return
-	for levelData:LevelData in _LevelsResource.Levels:
+	if !_LevelInteractablesContainer || LevelManager._LevelsResource.Levels.is_empty(): return
+	for levelData:LevelData in LevelManager._LevelsResource.Levels:
 		_SetupInteractable(levelData)
 
 func _SetupInteractable(levelData: LevelData):
@@ -31,7 +31,7 @@ func _SetupInteractable(levelData: LevelData):
 		levelInteractable.SetTimeLabel(levelData.PersonalCompleteTime)
 	
 	# Handle Collectables Time label's text  
-	levelInteractable.SetCollectablesLabel(levelData.Collectables)
+	levelInteractable.SetCollectablesLabel(levelData)
 	
 	_LevelInteractables.set(levelData, levelInteractable)
 
@@ -45,7 +45,7 @@ func _ReloadInteractables() -> void:
 			_LevelInteractables[levelDatas[index]].SetTimeLabel(levelDatas[index].PersonalCompleteTime)
 		
 		# Handle Collectables label
-		_LevelInteractables[levelDatas[index]].SetCollectablesLabel(levelDatas[index].Collectables)
+		_LevelInteractables[levelDatas[index]].SetCollectablesLabel(levelDatas[index])
 		
 		# Handle if the level button is disabled or not. Also focuses the button for the level the player has yet to complete
 		if index > 0:

@@ -1,43 +1,75 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://hj1jx8y8su4c"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://hj1jx8y8su4c"]
 
 [ext_resource type="StyleBox" uid="uid://dqsuvn8sqbtl7" path="res://LMS/Creative Assets/Theme/Btn_Disabled.tres" id="1_k1ltc"]
-[ext_resource type="FontFile" uid="uid://4kf6n4h8mq6y" path="res://LMS/Creative Assets/Theme/KGHAPPY.ttf" id="1_kuqjh"]
 [ext_resource type="StyleBox" uid="uid://cm8eu6rupwvni" path="res://LMS/Creative Assets/Theme/Btn_Focus.tres" id="1_xj6u2"]
 [ext_resource type="StyleBox" uid="uid://dg4otmi01s5qv" path="res://LMS/Creative Assets/Theme/Btn_Hover.tres" id="2_6q8mn"]
 [ext_resource type="StyleBox" uid="uid://cbji7qmmsa26u" path="res://LMS/Creative Assets/Theme/Btn_Normal.tres" id="3_qea6h"]
 [ext_resource type="StyleBox" uid="uid://ff65hn58a7yg" path="res://LMS/Creative Assets/Theme/Btn_Pressed.tres" id="5_m8tm0"]
+[ext_resource type="FontFile" uid="uid://5jy556jsmoyc" path="res://LMS/Creative Assets/Theme/Daydream.ttf" id="6_k1ltc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clv0t"]
-bg_color = Color(0.363819, 0.169316, 0.0139335, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8tm0"]
+bg_color = Color(1, 0.666667, 0.368627, 0.921569)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8owa"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.580392)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+bg_color = Color(0.0509804, 0.168627, 0.270588, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1ltc"]
+bg_color = Color(0.0509804, 0.168627, 0.270588, 0.894118)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [resource]
-default_font = ExtResource("1_kuqjh")
-default_font_size = 14
-BackgroundContainer/base_type = &"PanelContainer"
-BackgroundContainer/styles/panel = SubResource("StyleBoxFlat_clv0t")
-Button/colors/font_color = Color(0.737255, 0.929412, 0.964706, 1)
-Button/colors/font_focus_color = Color(0.184314, 0.0941176, 0.278431, 1)
-Button/colors/font_hover_color = Color(0.184314, 0.0941176, 0.278431, 1)
+default_font = ExtResource("6_k1ltc")
+default_font_size = 30
+Button/colors/font_color = Color(0.0509804, 0.168627, 0.270588, 1)
+Button/colors/font_focus_color = Color(0.815686, 0.505882, 0.34902, 1)
+Button/colors/font_hover_color = Color(0.815686, 0.505882, 0.34902, 1)
+Button/colors/font_pressed_color = Color(0.0509804, 0.168627, 0.270588, 1)
 Button/styles/disabled = ExtResource("1_k1ltc")
 Button/styles/focus = ExtResource("1_xj6u2")
 Button/styles/hover = ExtResource("2_6q8mn")
 Button/styles/normal = ExtResource("3_qea6h")
 Button/styles/pressed = ExtResource("5_m8tm0")
 HeaderLarge/base_type = &"Label"
-HeaderLarge/colors/font_color = Color(1, 1, 1, 1)
-HeaderLarge/font_sizes/font_size = 36
+HeaderLarge/colors/font_color = Color(1, 0.666667, 0.368627, 1)
+HeaderLarge/font_sizes/font_size = 50
 HeaderSmall/base_type = &"Label"
-HeaderSmall/colors/font_color = Color(1, 1, 1, 1)
-HeaderSmall/font_sizes/font_size = 20
+HeaderSmall/colors/font_color = Color(0.815686, 0.505882, 0.34902, 1)
+HeaderSmall/font_sizes/font_size = 30
+HighlightContainer/base_type = &"PanelContainer"
+HighlightContainer/styles/panel = SubResource("StyleBoxFlat_m8tm0")
+InfoLabel/base_type = &"Label"
+InfoLabel/colors/font_color = Color(1, 0.831373, 0.639216, 1)
+InfoLabel/font_sizes/font_size = 14
+InfoTitleLabel/base_type = &"Label"
+InfoTitleLabel/colors/font_color = Color(0, 0, 0, 1)
+InfoTitleLabel/font_sizes/font_size = 16
+Label/colors/font_color = Color(1, 0.92549, 0.839216, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_m8owa")
+SubtleContianer/base_type = &"PanelContainer"
+SubtleContianer/styles/panel = SubResource("StyleBoxFlat_k1ltc")

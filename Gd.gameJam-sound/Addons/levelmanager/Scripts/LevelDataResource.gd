@@ -10,3 +10,9 @@ extends Resource
 @export var Completed: bool = false
 @export var PersonalCompleteTime: float = -1
 @export var Collectables: Dictionary[NodePath, bool] = {}
+
+func CurrentCollectedCount() -> int:
+	return Collectables.values().map(func(value): value == true).size()
+
+func TotalCollectables() -> int:
+	return Collectables.size()

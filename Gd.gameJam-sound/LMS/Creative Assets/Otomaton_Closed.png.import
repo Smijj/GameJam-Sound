@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bydi4ipy4o4iy"
-path="res://.godot/imported/Otomatone_Closed.png-6fa3cbdacca2858d2b7c756bc50955f7.ctex"
+uid="uid://ddnqhb6lix1do"
+path="res://.godot/imported/Otomaton_Closed.png-2d0350fa2192b9b35b85e4528c9e70ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LMS/Creative Assets/Otomatone_Closed.png"
-dest_files=["res://.godot/imported/Otomatone_Closed.png-6fa3cbdacca2858d2b7c756bc50955f7.ctex"]
+source_file="res://LMS/Creative Assets/Otomaton_Closed.png"
+dest_files=["res://.godot/imported/Otomaton_Closed.png-2d0350fa2192b9b35b85e4528c9e70ad.ctex"]
 
 [params]
 

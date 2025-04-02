@@ -26,7 +26,12 @@ var _CollisionResult: KinematicCollision2D
 func _exit_tree() -> void:
 	AudioHandler.StopAmbient(_SFXRolling)
 
+func _ready() -> void:
+	GameManager.OnPaused.connect(func(): AudioHandler.StopAmbient(_SFXRolling))
+
 func _input(event: InputEvent) -> void:
+	if !StateManager.IsGameplay(): return
+	# Handle Input
 	if event.is_action_pressed("Move_Left"):
 		if (angular_velocity >= -0.1):
 			apply_torque_impulse(-_TorqueImpluse)
@@ -35,28 +40,31 @@ func _input(event: InputEvent) -> void:
 			apply_torque_impulse(_TorqueImpluse)
 		
 func _physics_process(delta: float) -> void:
-	_CheckTileData(delta)
+	# Handle Input
+	if StateManager.IsGameplay(): 
+		if Input.is_action_pressed("Move_Left"):
+			apply_torque(-_Torque)
+			if !_IsTouchingSurface():
+				apply_force(Vector2.LEFT * _AirVelocity)
+		if Input.is_action_pressed("Move_Right"):
+			apply_torque(_Torque)
+			if !_IsTouchingSurface():
+				apply_force(Vector2.RIGHT * _AirVelocity)
 	
+	# Handle Player sprite changing with difference speeds
 	if linear_velocity.length() > _WowSpeed:
 		_MakeWow()
 	else:
 		_MakeNotWow()
-	
-	if Input.is_action_pressed("Move_Left"):
-		apply_torque(-_Torque)
-		if !_IsTouchingSurface():
-			apply_force(Vector2.LEFT * _AirVelocity)
-	if Input.is_action_pressed("Move_Right"):
-		apply_torque(_Torque)
-		if !_IsTouchingSurface():
-			apply_force(Vector2.RIGHT * _AirVelocity)
-	
+
+	# Handle Roll SFX changing with different speeds
 	if absf(angular_velocity) > 1 && (_IsTouchingSurface() || _AirTimeCounter < _MinAirTimeBeforeCollisionSFX):
 		var audioplayer:AudioStreamPlayer = AudioHandler.PlayAmbient(_SFXRolling, 0.25)
 		audioplayer.pitch_scale = lerpf(0.3, 1.1, linear_velocity.length() / _WowSpeed)
 	else:
 		AudioHandler.StopAmbient(_SFXRolling)
 
+	# Handle hitting a surface SFX
 	if _AirTimeCounter > _MinAirTimeBeforeCollisionSFX && _IsTouchingSurface():
 		AudioHandler.PlaySFX(_SFXHitList.pick_random())
 		AudioHandler.PlaySFX(_SFXStoneHit)
@@ -66,9 +74,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		_AirTimeCounter = 0
 	
+	_CheckTileData(delta)
 	_CollisionResult = move_and_collide(linear_velocity * delta)
 
 func _OnHarmfulCollision() -> void:
+	if !StateManager.IsGameplay(): return
+	
 	AudioHandler.PlaySFX(_SFXDie)
 	LevelManager.RestartLevel()
 

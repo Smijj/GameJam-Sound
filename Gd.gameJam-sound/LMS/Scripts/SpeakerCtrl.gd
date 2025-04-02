@@ -65,9 +65,23 @@ func OnBodyExitedArea(body: Node2D) -> void:
 #region Private
 
 func _PushPlayer() -> void:
+	var playerVelocity: Vector2 = _CurrentPlayer.linear_velocity
+	# Get speaker push direction
+	var speakerDirection: Vector2 = transform.basis_xform(Vector2.UP).normalized()
+
+	# Project player's velocity onto speaker's direction
+	var velocityInSpeakerDirection: float = playerVelocity.dot(speakerDirection)
+	# If the player is moving against the speaker, negate that part of the velocity
+	if velocityInSpeakerDirection < 0:
+		playerVelocity -= speakerDirection * velocityInSpeakerDirection
+
+	# Apply the speaker impulse while preserving allowed velocity
+	var speakerImpulse: Vector2 = speakerDirection * _SpeakerStrength
+	# Remove existing player velocity
 	_CurrentPlayer.linear_velocity = Vector2.ZERO
-	_CurrentPlayer.apply_impulse(transform.basis_xform(Vector2.UP) * _SpeakerStrength)
-	
+	# Apply impluse
+	_CurrentPlayer.apply_impulse(playerVelocity + speakerImpulse)
+
 	if _DistortionTween: _DistortionTween.kill()
 	var _DistortionTween: Tween = create_tween()
 	_DistortionTween.tween_method(_AnimateDistortion, 0.0, 0.7, 0.3).set_ease(Tween.EASE_OUT)
@@ -83,7 +97,6 @@ func _AnimateDistortion(size:float) -> void:
 func _ResetDistortion() -> void:
 	LevelManager.CurrentLevel._GUIInstance.DistortionProcessor.material.set("shader_parameter/center", Vector2(0.5, 0.5))
 	LevelManager.CurrentLevel._GUIInstance.DistortionProcessor.material.set("shader_parameter/size", 0)
-	
 
 func _DrawLineIndicatorToTarget(target: Vector2) -> void:
 	if _LineIndicator.visible == false:

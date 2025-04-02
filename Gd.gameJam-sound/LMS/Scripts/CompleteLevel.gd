@@ -6,6 +6,6 @@ func _ready() -> void:
 	body_entered.connect(_OnBodyEnteredArea)
 	
 func _OnBodyEnteredArea(body: PhysicsBody2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") && StateManager.IsGameplay():
 		LevelManager.CompleteLevel()
 		AudioHandler.PlaySFX(_SFXLevelComplete)

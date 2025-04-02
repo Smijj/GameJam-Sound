@@ -33,7 +33,7 @@ func RestartLevel() -> void:
 
 func CompleteLevel() -> void:
 	OnLevelComplete.emit()
-	_StopLevel()
+	#_StopLevel()
 
 func QuitLevel() -> void:
 	OnLevelQuit.emit()

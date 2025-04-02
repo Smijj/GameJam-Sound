@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://4kf6n4h8mq6y"
-path="res://.godot/imported/KGHAPPY.ttf-c245215ae5b994456a772b46a41349a1.fontdata"
+uid="uid://5jy556jsmoyc"
+path="res://.godot/imported/Daydream.ttf-1c84f93ce55c06898bfe06feb527e58f.fontdata"
 
 [deps]
 
-source_file="res://LMS/Creative Assets/Theme/KGHAPPY.ttf"
-dest_files=["res://.godot/imported/KGHAPPY.ttf-c245215ae5b994456a772b46a41349a1.fontdata"]
+source_file="res://LMS/Creative Assets/Theme/Daydream.ttf"
+dest_files=["res://.godot/imported/Daydream.ttf-1c84f93ce55c06898bfe06feb527e58f.fontdata"]
 
 [params]
 
@@ -22,20 +22,14 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0),
-"variation_embolden": 0.0
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}

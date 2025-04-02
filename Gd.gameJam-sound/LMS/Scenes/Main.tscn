@@ -27,6 +27,8 @@ tile_set = ExtResource("1_67c5i")
 
 [node name="World Boundary" type="Area2D" parent="."]
 position = Vector2(0, 3000)
+collision_layer = 0
+collision_mask = 2
 script = SubResource("GDScript_67c5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundary"]

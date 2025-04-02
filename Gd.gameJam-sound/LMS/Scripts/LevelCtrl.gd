@@ -3,9 +3,9 @@ extends Node2D
 
 @export var _StartPosition:Marker2D = null
 
+var LevelTime: float = 0
 var _PlayerInstance: PlayerCtrl = null
 var _GUIInstance: GUI = null
-var _LevelTime: float = 0
 
 func _ready() -> void:
 	_SetupLevel()
@@ -24,13 +24,15 @@ func _SetupLevel() -> void:
 	StateManager.GameState = StateManager.States.GAMEPLAY
 
 func _process(delta: float) -> void:
-	_LevelTime += delta
+	LevelTime += delta
 	
 
 func _OnLevelComplete() -> void:
 	var existingTime:float = LevelManager.CurrentLevelData.PersonalCompleteTime
-	if existingTime > _LevelTime || existingTime < 0:
-		LevelManager.CurrentLevelData.PersonalCompleteTime = _LevelTime
+	if existingTime > LevelTime || existingTime < 0:
+		LevelManager.CurrentLevelData.PersonalCompleteTime = LevelTime
 	LevelManager.CurrentLevelData.Completed = true
 	
 	LevelManager.SaveLevelData()
+	
+	MenuManager.OpenMenu("LevelComplete")

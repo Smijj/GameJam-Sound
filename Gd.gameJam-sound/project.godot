@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 StateManager="*res://Addons/statemanager/Scripts/StateManager.gd"
 AudioHandler="*res://LMS/Scripts/Managers/AudioHandler.gd"
 SignalBus="*res://LMS/Scripts/Managers/SignalBus.gd"
-GameManager="*res://LMS/Scripts/Managers/GameManager.gd"
-MenuManager="*res://Addons/menumanager/Scripts/MenuManager.gd"
 LevelManager="*res://Addons/levelmanager/Scripts/LevelManager.gd"
+MenuManager="*res://Addons/menumanager/Scripts/MenuManager.gd"
+GameManager="*res://LMS/Scripts/Managers/GameManager.gd"
 
 [display]
 
@@ -117,6 +117,7 @@ Pause={
 
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Speaker"
 2d_physics/layer_5="Damaging"
 
 [rendering]

@@ -16,15 +16,20 @@ func GetGUIInstance() -> GUI:
 
 var Paused: bool = false :
 	set (value): 
-		print(value)
-		if value == true && !StateManager.IsGameplay(): return
+		# Don't paused anything unless the GameState is Gameplay
+		if value == true && !StateManager.IsGameplay(): 
+			return
+		
 		get_tree().paused = value
 		Paused = value
+		
 		if value:
 			MenuManager.OpenMenu("Pause")
+			OnPaused.emit()
 		else:
 			MenuManager.CloseMenus()
 	get: return Paused
+signal OnPaused
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -34,7 +39,6 @@ func _ready() -> void:
 	
 	LevelManager.OnLevelLoaded.connect(_OnLevelLoaded)
 	LevelManager.OnLevelQuit.connect(_OnLevelQuit)
-	LevelManager.OnLevelComplete.connect(_OnLevelCopmlete)
 	MenuManager.OnMenusClosed.connect(_OnMenusClosed)
 
 func _input(event: InputEvent) -> void:
@@ -47,8 +51,5 @@ func _OnLevelLoaded() -> void:
 func _OnLevelQuit() -> void:
 	MenuManager.OpenMenu("Start")
 
-func _OnLevelCopmlete() -> void:
-	MenuManager.OpenMenu("Start")
-	
 func _OnMenusClosed() -> void:
 	Paused = false
