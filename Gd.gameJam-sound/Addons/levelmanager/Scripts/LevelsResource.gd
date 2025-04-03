@@ -12,6 +12,7 @@ func _ResetSavedData() -> void:
 		level.Completed = false
 		level.PersonalCompleteTime = -1
 		level.Collectables.clear()
+		level.Collectables = {}
 		ResourceSaver.save(level)
 	print("CLEARED Save Data")
 

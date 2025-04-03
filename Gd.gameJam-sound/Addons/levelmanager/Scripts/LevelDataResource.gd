@@ -12,7 +12,10 @@ extends Resource
 @export var Collectables: Dictionary[NodePath, bool] = {}
 
 func CurrentCollectedCount() -> int:
-	return Collectables.values().map(func(value): value == true).size()
+	var collectedCount: int = 0
+	for collectable:bool in Collectables.values():
+		if collectable == true: collectedCount += 1
+	return collectedCount
 
 func TotalCollectables() -> int:
 	return Collectables.size()

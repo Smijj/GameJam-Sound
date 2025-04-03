@@ -43,9 +43,6 @@ position = Vector2(-108, -207)
 [node name="Collectable5" parent="Collectables" instance=ExtResource("6_5rdwu")]
 position = Vector2(94, -191)
 
-[node name="Collectable6" parent="Collectables" instance=ExtResource("6_5rdwu")]
-position = Vector2(94, -191)
-
 [node name="Collectable2" parent="Collectables" instance=ExtResource("6_5rdwu")]
 position = Vector2(-232, -191)
 

@@ -17,7 +17,13 @@ func GetGUIInstance() -> GUI:
 var _Music: Array[AudioStream] = [
 	preload("res://LMS/Audio/Music/Music_Bouncing-Baal_Normalised.ogg") as AudioStream,
 	preload("res://LMS/Audio/Music/Music_Random-Race_Normalised.ogg") as AudioStream,
-	preload("res://LMS/Audio/Music/Music_String-Theory_Normalised.ogg") as AudioStream
+	preload("res://LMS/Audio/Music/Music_String-Theory_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Grey-Sector_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Happy-Arcade-Tune_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Lasso-Lady_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_School-Of-Quirks_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Stage-1-Remix_Normalised.ogg") as AudioStream,
+	preload("res://LMS/Audio/Music/Music_Darker_Waves_Normalised.ogg") as AudioStream,
 ]
 
 var Paused: bool = false :

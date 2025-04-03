@@ -4,10 +4,15 @@ signal OnLevelLoaded
 signal OnLevelComplete
 signal OnLevelQuit
 
+const LEVELS_RESOURCE_SAVE_PATH: String = "user://LevelsResources.tres"
+
 var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres")
 
 var CurrentLevelData: LevelData = null
 var CurrentLevel: LevelCtrl = null
+
+#func GetLevelData() -> LevelData:
+	
 
 func SaveLevelData() -> void:
 	if CurrentLevelData: ResourceSaver.save(CurrentLevelData)
