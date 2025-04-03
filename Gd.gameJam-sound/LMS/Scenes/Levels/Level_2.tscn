@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=4 uid="uid://cw6c68yi1ud2k"]
+
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_xlmxt"]
+[ext_resource type="TileSet" uid="uid://byrbl6ehculig" path="res://LMS/Creative Assets/Tiles/TileSet.tres" id="2_wkqb1"]
+[ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_uf8nd"]
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="4_hktj2"]
+[ext_resource type="PackedScene" uid="uid://ddfwsbaoopsds" path="res://LMS/Prefabs/Collectable.tscn" id="5_aw7ro"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_xlmxt")
+_StartPosition = NodePath("StartPoint")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 10
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8////AgAAAAAAAAD9////AgAAAAAAAAD+////AgAAAAAAAAD/////AgAAAAAAAAAAAP//AgAAAAAAAAD7////AgAAAAAAAAD6////AgAAAAAAAAD5////AgADAAAAAAD5//7/AgAAAAAAAAD5//3/AgAAAAAAAAD8//z/AgAAAAAAAAD9//z/AgAAAAAAAAD+//z/AgAAAAAAAAD///z/AgAAAAAAAAAAAPz/AgAAAAAAAAABAPz/AgACAAAAAAABAP3/AgAAAAAAAAABAP7/AgAAAAAAAAABAP//AgAEAAAAAAD8//v/AgAAAAAAAAD8//r/AgAAAAAAAAD8//n/AgACAAAAAAD7//n/AgAAAAAAAAD6//n/AgAAAAAAAAD5//n/AgAAAAAAAAD4//n/AgAAAAAAAAD3//n/AgAAAAAAAAD2//n/AgAAAAAAAAD1//n/AgABAAAAAAD1//r/AgAAAAAAAAD1//v/AgAAAAAAAAD1//z/AgADAAAAAAD4//z/AgAAAAAAAAD3//z/AgAAAAAAAAD2//z/AgAAAAAAAAD4//3/AgADAAAAAAD9//v/AgACAAAAAAD7//r/AgAAAAAAAAAAAP3/AgACAAEAAAAAAP7/AgAAAAEAAAD2//v/AgABAAEAAAD2//r/AgADAAEAAAD7//z/AgAAAAAAAAD7//v/AgAAAAAAAAD6//r/AgAAAAAAAAD5//r/AgAAAAAAAAD4//r/AgACAAEAAAD6//v/AgACAAEAAAD5//z/AgAAAAAAAAA=")
+tile_set = ExtResource("2_wkqb1")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(0, -71)
+
+[node name="LevelComplete" parent="." instance=ExtResource("3_uf8nd")]
+position = Vector2(-288, -126)
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Speaker" parent="Interactables" instance=ExtResource("4_hktj2")]
+position = Vector2(-175, 0)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Collectable" parent="Collectables" instance=ExtResource("5_aw7ro")]
+position = Vector2(-208, -144)

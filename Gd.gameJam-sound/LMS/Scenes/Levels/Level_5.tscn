@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=4 uid="uid://c8rers4tw5pu3"]
+
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_gcmec"]
+[ext_resource type="TileSet" uid="uid://byrbl6ehculig" path="res://LMS/Creative Assets/Tiles/TileSet.tres" id="2_n4t16"]
+[ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_o78yn"]
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="4_dup5t"]
+[ext_resource type="PackedScene" uid="uid://ddfwsbaoopsds" path="res://LMS/Prefabs/Collectable.tscn" id="5_oi5d3"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_gcmec")
+_StartPosition = NodePath("StartPoint")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 10
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8////AgAAAAAAAAD9////AgAAAAAAAAD+////AgAAAAAAAAD/////AgAAAAAAAAAAAP//AgAAAAAAAAABAP//AgAAAAAAAAACAP//AgAAAAAAAAADAP//AgAAAAAAAAD7////AgAAAAAAAAD6////AgAAAAAAAAD5////AgAAAAAAAAD4////AgAAAAAAAAD3////AgAAAAAAAAD+//z/AgAAAAAAAAD9//z/AgAAAAAAAAD///z/AgAAAAAAAAAAAPz/AgAAAAAAAAABAPz/AgAAAAAAAAACAPz/AgAAAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAD8//z/AgAAAAAAAAD7//z/AgADAAAAAAD2//7/AgAAAAAAAAD1//7/AgAAAAAAAAD1//3/AgAAAAAAAAD1//z/AgAAAAAAAAD1//v/AgAAAAAAAAD2////AgAAAAAAAAD1////AgAEAAAAAFD1//r/AgAAAAAAAAD1//n/AgAAAAAAAAD1//j/AgAAAAAAAAD7//r/AgAAAAAAAAD7//v/AgAAAAAAAAD7//j/AgAAAAEAAAD7//n/AgAAAAAAAAAEAP//AgAAAAAAAAAFAP//AgAAAAAAAAAGAP//AgAAAAAAAAAHAP//AgAAAAAAAAAFAPz/AgAAAAAAAAAGAPz/AgAAAAAAAAAGAP3/AgAAAAAAAAAHAP7/AgAAAAAAAAAGAP7/AgAAAAAAAAAHAPz/AgAAAAAAAAAHAP3/AgAAAAAAAAD1//f/AgAAAAAAAAD1//b/AgAAAAAAAAD1//X/AgAAAAAAAAD1//T/AgAAAAAAAAD1//P/AgAEAAAAADD2//P/AgAAAAAAAAD3//P/AgAAAAAAAAD4//P/AgAAAAAAAAD5//P/AgAAAAAAAAD6//P/AgAAAAAAAAD7//P/AgAAAAAAAAD8//P/AgAAAAAAAAD9//P/AgAAAAAAAAD+//P/AgAAAAAAAAD///P/AgAAAAAAAAD8//j/AgAAAAAAAAD9//j/AgAAAAAAAAD+//j/AgAAAAAAAAD///j/AgAAAAAAAAAAAPj/AgAAAAAAAAABAPj/AgAAAAAAAAD8//n/AgAAAAAAAAD8//r/AgAAAAAAAAD8//v/AgAAAAAAAAABAPP/AgAAAAAAAAAAAPP/AgAAAAAAAAACAPj/AgAAAAAAAAADAPj/AgAAAAAAAAAFAPj/AgAAAAAAAAAEAPj/AgAAAAAAAAAGAPf/AgAAAAAAAAAGAPj/AgAAAAAAAAD9//n/AgAAAAAAAAD+//n/AgAAAAAAAAD///n/AgAAAAAAAAAAAPn/AgAAAAAAAAABAPn/AgAAAAAAAAACAPn/AgAAAAAAAAADAPn/AgAAAAAAAAAEAPn/AgAAAAAAAAAFAPn/AgAAAAAAAAAGAPn/AgAAAAAAAAACAPP/AgAAAAAAAAADAPP/AgAAAAAAAAAEAPP/AgAAAAAAAAAFAPP/AgAAAAAAAAAEAPT/AgAAAAAAAAADAPT/AgAAAAAAAAADAPX/AgAAAAAAAAADAPb/AgADAAAAAGAGAPP/AgAAAAAAAAAHAPP/AgAAAAAAAAAHAPT/AgADAAAAAAAHAPf/AgAEAAAAAGAIAPj/AgAEAAAAAGAHAPj/AgAAAAAAAAAHAPn/AgAAAAAAAAAIAPn/AgAAAAAAAAAKAPf/AgADAAAAAAAKAPb/AgAAAAAAAAAJAPX/AgAAAAAAAAAIAPT/AgAAAAAAAAALAPf/AgAAAAAAAAALAPb/AgAAAAAAAAAJAPn/AgABAAEAAAAIAPX/AgAEAAAAAFAJAPb/AgAEAAAAAFAGAPb/AgADAAAAADAFAPT/AgADAAAAAGAEAPX/AgADAAAAAGAMAPf/AgAAAAAAAAAMAPb/AgAAAAAAAAANAPb/AgAAAAAAAAANAPf/AgAAAAAAAAANAPj/AgAEAAEAAGANAPn/AgAEAAEAAGANAPr/AgAEAAEAAGAIAPz/AgACAAAAAAAJAP3/AgAAAAAAAAAKAP7/AgAAAAAAAAAIAP3/AgAAAAAAAAAIAP7/AgAAAAAAAAAJAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAIAP//AgAAAAAAAAAKAP//AgAAAAAAAAAJAPz/AgAEAAEAAAAKAPz/AgAEAAEAAAALAPz/AgAEAAEAAAAMAPz/AgAEAAEAAAANAPv/AgAEAAEAAGANAPz/AgABAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAANAP3/AgAAAAAAAAAOAP3/AgAAAAAAAAAOAPz/AgAAAAAAAAAOAPv/AgAAAAAAAAAOAPr/AgAAAAAAAAAOAPn/AgAAAAAAAAAOAPj/AgAAAAAAAAAOAPf/AgAAAAAAAAAOAPb/AgAAAAAAAAAIAPP/AgAAAAAAAAAJAPT/AgAAAAAAAAAKAPX/AgAAAAAAAAAJAPP/AgAAAAAAAAAKAPP/AgAAAAAAAAAKAPT/AgAAAAAAAAALAPT/AgAAAAAAAAALAPX/AgAAAAAAAAALAPP/AgAAAAAAAAAMAPX/AgAAAAAAAAANAPX/AgAAAAAAAAAOAPX/AgAAAAAAAAD9//r/AgAAAAAAAAD9//v/AgAAAAAAAAAOAPP/AgAEAAAAAGAMAPP/AgAAAAAAAAANAPP/AgAAAAAAAAAOAPT/AgAAAAAAAAANAPT/AgAAAAAAAAAMAPT/AgAAAAAAAAAOAP//AgAEAAAAAAAOAP7/AgAAAAAAAAANAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAALAP7/AgAAAAAAAAALAP//AgAAAAAAAAAMAP//AgAAAAAAAAANAP//AgAAAAAAAAD8//f/AgAAAAAAAAD7//b/AgAAAAAAAAD8//b/AgACAAAAAAD9//f/AgABAAEAAAD+//f/AgAEAAEAAAD///f/AgAEAAEAAAAAAPf/AgAEAAEAAAD2//3/AgACAAAAAAD6//b/AgACAAEAAAD7//f/AgADAAAAAAD6//X/AgABAAAAAAD7//X/AgABAAEAAAACAPT/AgACAAEAAAA=")
+tile_set = ExtResource("2_n4t16")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(132, -63)
+
+[node name="LevelComplete" parent="." instance=ExtResource("3_o78yn")]
+position = Vector2(-31, -128)
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Speaker" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(218, -63)
+rotation = -1.57079
+
+[node name="Speaker2" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(-265, -2.86102e-06)
+rotation = 0.261799
+_SpeakerStrength = 315.0
+
+[node name="Speaker3" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(-128, -214)
+rotation = -0.785398
+_SpeakerStrength = 250.0
+
+[node name="Speaker4" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(-317, -304)
+rotation = 1.0472
+_SpeakerStrength = 500.0
+
+[node name="Speaker5" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(162, -225)
+
+[node name="Speaker6" parent="Interactables" instance=ExtResource("4_dup5t")]
+position = Vector2(441, -128)
+rotation = -1.309
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Collectable" parent="Collectables" instance=ExtResource("5_oi5d3")]
+position = Vector2(0, -63)
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource("5_oi5d3")]
+position = Vector2(-217, -177)
+
+[node name="Collectable3" parent="Collectables" instance=ExtResource("5_oi5d3")]
+position = Vector2(208, -355)
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource("5_oi5d3")]
+position = Vector2(-132, -363)
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource("5_oi5d3")]
+position = Vector2(224, -161)

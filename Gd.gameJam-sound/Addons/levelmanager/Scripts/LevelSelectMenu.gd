@@ -27,7 +27,7 @@ func _SetupInteractable(levelData: LevelData):
 	if !_LevelInteractablePrefab: return
 	
 	var levelInteractable:LevelInteractable = _LevelInteractablePrefab.instantiate() as LevelInteractable
-	_LevelInteractablesContainer.add_child(levelInteractable)
+	_LevelInteractablesContainer.add_child(levelInteractable)    
 	
 	# Set level select button onClick function
 	levelInteractable.SetButton(levelData.LevelName, func(): LevelManager.LoadLevel(levelData))

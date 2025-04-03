@@ -2,23 +2,25 @@
 class_name LevelsResource
 extends Resource
 
-#@export_tool_button("Save Data", "Callable") var save_action:Callable = _SaveData
-@export_tool_button("CLEAR Saved Data", "Callable") var reset_action:Callable = _ResetSavedData
+@export_tool_button("CLEAR Saved Data", "Callable") var clear_action:Callable = ClearSavedData
+@export_tool_button("Reset Defaults", "Callable") var reset_action:Callable = _ResetDefaults
 @export var Levels: Array[LevelData] = []
 
-func _ResetSavedData() -> void:
+func _ResetDefaults() -> void:
 	if Levels.is_empty(): return
 	for level:LevelData in Levels:
 		level.Completed = false
 		level.PersonalCompleteTime = -1
-		level.Collectables.clear()
 		level.Collectables = {}
 		ResourceSaver.save(level)
-	print("CLEARED Save Data")
+	print("Reset Defaults")
 
-func _SaveData() -> void:
+func ClearSavedData() -> void:
 	if Levels.is_empty(): return
 	for level:LevelData in Levels:
-		ResourceSaver.save(level)
-	
-	print("Saved Data")
+		var path:String = "user://" + level.LevelName + ".tres"
+		if !ResourceLoader.exists(path): continue
+		DirAccess.remove_absolute(path)
+		print("Removing ", path)
+
+	print("CLEARED Saved Data")

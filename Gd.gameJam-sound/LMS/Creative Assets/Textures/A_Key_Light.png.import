@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dslson2vtfsg3"
-path="res://.godot/imported/DottedLine_Thin.png-f08ee64a1f560e5ef6a88bdd87102748.ctex"
+uid="uid://dkr2el2c0l2r1"
+path="res://.godot/imported/A_Key_Light.png-9b8c77a1f118931c0b7f418e6d230577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LMS/Creative Assets/Textures/DottedLine_Thin.png"
-dest_files=["res://.godot/imported/DottedLine_Thin.png-f08ee64a1f560e5ef6a88bdd87102748.ctex"]
+source_file="res://LMS/Creative Assets/Textures/A_Key_Light.png"
+dest_files=["res://.godot/imported/A_Key_Light.png-9b8c77a1f118931c0b7f418e6d230577.ctex"]
 
 [params]
 

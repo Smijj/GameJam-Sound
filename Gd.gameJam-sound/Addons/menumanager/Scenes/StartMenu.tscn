@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://g6r5rxpgx4d7"]
+[gd_scene load_steps=7 format=3 uid="uid://g6r5rxpgx4d7"]
 
 [ext_resource type="FontFile" uid="uid://ca56ls3jxvntq" path="res://LMS/Creative Assets/Theme/Her Mana Two .ttf" id="1_dedo3"]
 [ext_resource type="Script" uid="uid://c3m4v6c64xy7p" path="res://Addons/menumanager/Scripts/BtnOpenMenu.gd" id="1_n0yc8"]
@@ -15,6 +15,14 @@ func _ready() -> void:
 func _pressed() -> void:
 	var musicBusIndex:int = AudioServer.get_bus_index(\"Music\")
 	AudioServer.set_bus_mute(musicBusIndex, button_pressed)
+"
+
+[sub_resource type="GDScript" id="GDScript_tqf57"]
+script/source = "extends Button
+
+func _pressed() -> void:
+	if LevelManager._LevelsResource:
+		LevelManager._LevelsResource.ClearSavedData()
 "
 
 [node name="StartMenu" type="CanvasLayer"]
@@ -107,7 +115,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="BtnMute" type="Button" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -123,3 +131,20 @@ theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "Mute"
 script = SubResource("GDScript_dedo3")
+
+[node name="BtnClearSave" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1266.0
+offset_top = -50.0
+offset_right = -1166.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Clear
+Save Data"
+script = SubResource("GDScript_tqf57")

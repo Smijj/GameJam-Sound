@@ -76,3 +76,7 @@ Label/colors/font_color = Color(1, 0.92549, 0.839216, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_m8owa")
 SubtleContianer/base_type = &"PanelContainer"
 SubtleContianer/styles/panel = SubResource("StyleBoxFlat_k1ltc")
+WorldSpaceLabel/base_type = &"Label"
+WorldSpaceLabel/colors/font_color = Color(1, 1, 1, 1)
+WorldSpaceLabel/font_sizes/font_size = 30
+WorldSpaceLabel/fonts/font = ExtResource("6_k1ltc")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b8rhd7lg4vlnn" path="res://LMS/Scripts/SpeakerCtrl.gd" id="1_d005a"]
 [ext_resource type="AudioStream" uid="uid://briqts5jark4b" path="res://LMS/Audio/SFX/SFX_SpeakerPulse.ogg" id="2_ig4bs"]
 [ext_resource type="Texture2D" uid="uid://ca880n1rn87pl" path="res://LMS/Creative Assets/Textures/Indicator.png" id="3_3lrdt"]
-[ext_resource type="Texture2D" uid="uid://dslson2vtfsg3" path="res://LMS/Creative Assets/Textures/DottedLine_Thin.png" id="3_jjjan"]
+[ext_resource type="Texture2D" uid="uid://dslson2vtfsg3" path="res://LMS/Creative Assets/Textures/Text_DottedLine_Thin.png" id="3_jjjan"]
 [ext_resource type="Texture2D" uid="uid://fdg2wmt4pyhl" path="res://LMS/Creative Assets/Art/Speaker.png" id="3_lgdwu"]
 [ext_resource type="Texture2D" uid="uid://cjjst5peo1spx" path="res://LMS/Creative Assets/NoteParticles2.png" id="6_3hv83"]
 [ext_resource type="Texture2D" uid="uid://chewd2pkmlx1c" path="res://LMS/Creative Assets/NoteParticles1.png" id="7_jjjan"]

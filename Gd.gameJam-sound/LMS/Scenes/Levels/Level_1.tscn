@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=4 uid="uid://dnedfqgi53lgm"]
+
+[ext_resource type="Script" uid="uid://cfs86r5dqbv2m" path="res://LMS/Scripts/LevelCtrl.gd" id="1_wixsr"]
+[ext_resource type="TileSet" uid="uid://byrbl6ehculig" path="res://LMS/Creative Assets/Tiles/TileSet.tres" id="2_tti5p"]
+[ext_resource type="PackedScene" uid="uid://cy75ah2b3tvov" path="res://LMS/Prefabs/LevelComplete.tscn" id="3_dx6m8"]
+[ext_resource type="PackedScene" uid="uid://du1tamw661e12" path="res://LMS/Prefabs/Speaker.tscn" id="4_kpp50"]
+[ext_resource type="PackedScene" uid="uid://ddfwsbaoopsds" path="res://LMS/Prefabs/Collectable.tscn" id="5_ifvop"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("_StartPosition")]
+script = ExtResource("1_wixsr")
+_StartPosition = NodePath("StartPoint")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 10
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP//AgAAAAAAAAABAP//AgAAAAAAAAACAP//AgAAAAAAAAADAP//AgAAAAAAAAD+////AgADAAAAAAD+//7/AgAAAAAAAAD+//3/AgAAAAAAAAD+//z/AgAAAAAAAAD+//v/AgABAAAAAAD///v/AgAAAAAAAAAAAPv/AgAAAAAAAAAEAP//AgAAAAAAAAAFAP//AgAAAAAAAAAGAP//AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAADAPv/AgAAAAAAAAAEAPv/AgAAAAAAAAAFAPv/AgAAAAAAAAAGAPv/AgAAAAAAAAAHAPv/AgAAAAAAAAAIAPv/AgAAAAAAAAAJAPv/AgAAAAAAAAAKAPv/AgAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAgAAAAAAAAAGAAIAAgAAAAAAAAAGAAMAAgADAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAJAAMAAgAEAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAALAAIAAgAAAAAAAAAMAAIAAgAAAAAAAAANAAIAAgAAAAAAAAAHAAIAAgAEAAEAAAAIAAIAAgAEAAEAAAAOAAIAAgAEAAAAAAAOAAEAAgAAAAAAAAAOAAAAAgAAAAAAAAAOAP//AgAAAAAAAAAOAP7/AgAAAAAAAAAOAP3/AgAAAAAAAAAOAPz/AgAAAAAAAAANAPv/AgAAAAAAAAALAPv/AgAAAAAAAAAMAPv/AgAAAAAAAAAOAPv/AgACAAAAAAAFAAAAAgADAAAAAAANAPz/AgACAAEAAAANAAEAAgAAAAEAAAD///7/AgABAAEAAAD///z/AgADAAEAAAA=")
+tile_set = ExtResource("2_tti5p")
+
+[node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(0, -71)
+
+[node name="LevelComplete" parent="." instance=ExtResource("3_dx6m8")]
+position = Vector2(420, 64)
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Speaker" parent="Interactables" instance=ExtResource("4_kpp50")]
+position = Vector2(455, -139)
+rotation = -2.0752
+
+[node name="Speaker2" parent="Interactables" instance=ExtResource("4_kpp50")]
+position = Vector2(321, 114)
+rotation = -4.18878
+
+[node name="Speaker3" parent="Interactables" instance=ExtResource("4_kpp50")]
+position = Vector2(-53, -19)
+rotation = -2.09439
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Collectable" parent="Collectables" instance=ExtResource("5_ifvop")]
+position = Vector2(209, -54)
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource("5_ifvop")]
+position = Vector2(305, 44)
