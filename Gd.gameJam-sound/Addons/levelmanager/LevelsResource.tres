@@ -1,17 +1,16 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=11 format=3 uid="uid://dw2jui7edn6k7"]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=12 format=3 uid="uid://dqyevewr2irt6"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
-[ext_resource type="PackedScene" uid="uid://dgt638vbyhkkx" path="res://LMS/Scenes/Levels/Level_Test.tscn" id="2_858hk"]
 [ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://Addons/levelmanager/Scripts/LevelsResource.gd" id="2_uds5b"]
 [ext_resource type="PackedScene" uid="uid://dgy7k6lpb7aqq" path="res://LMS/Scenes/Levels/Level_03.tscn" id="3_chg41"]
 [ext_resource type="PackedScene" uid="uid://c8rers4tw5pu3" path="res://LMS/Scenes/Levels/Level_01.tscn" id="4_3krqp"]
+[ext_resource type="PackedScene" uid="uid://dvtx10ojuexkb" path="res://LMS/Scenes/Levels/Level_04.tscn" id="5_3ap2o"]
 [ext_resource type="PackedScene" uid="uid://c5eejd4u1ebxh" path="res://LMS/Scenes/Levels/Level_02.tscn" id="5_chg41"]
 
 [sub_resource type="Resource" id="Resource_0dyit"]
 script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("2_858hk")
 LevelName = "X"
-Completed = false
+Completed = true
 PersonalCompleteTime = -1.0
 Collectables = Dictionary[NodePath, bool]({
 NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
@@ -27,30 +26,64 @@ metadata/_custom_type_script = "uid://rfm1a3uatox8"
 script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("4_3krqp")
 LevelName = "1"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
+Completed = true
+PersonalCompleteTime = 3.96667
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable5"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_3ap2o"]
 script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("5_chg41")
 LevelName = "2"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
+Completed = true
+PersonalCompleteTime = 10.2847
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable5"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [sub_resource type="Resource" id="Resource_tdvqg"]
 script = ExtResource("1_e8eg2")
 PackedLevel = ExtResource("3_chg41")
 LevelName = "3"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
+Completed = true
+PersonalCompleteTime = 6.03333
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true
+})
+metadata/_custom_type_script = "uid://rfm1a3uatox8"
+
+[sub_resource type="Resource" id="Resource_0o3p6"]
+script = ExtResource("1_e8eg2")
+PackedLevel = ExtResource("5_3ap2o")
+LevelName = "4"
+Completed = true
+PersonalCompleteTime = 9.88351
+Collectables = Dictionary[NodePath, bool]({
+NodePath("/root/LevelManager/Level/Collectables/Collectable"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable2"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable3"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable4"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable5"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable6"): true,
+NodePath("/root/LevelManager/Level/Collectables/Collectable7"): true
+})
 metadata/_custom_type_script = "uid://rfm1a3uatox8"
 
 [resource]
 script = ExtResource("2_uds5b")
-Levels = Array[ExtResource("1_e8eg2")]([SubResource("Resource_0dyit"), SubResource("Resource_chg41"), SubResource("Resource_3ap2o"), SubResource("Resource_tdvqg")])
+Levels = Array[ExtResource("1_e8eg2")]([SubResource("Resource_0dyit"), SubResource("Resource_chg41"), SubResource("Resource_3ap2o"), SubResource("Resource_tdvqg"), SubResource("Resource_0o3p6")])
 metadata/_custom_type_script = "uid://cgg1d75r0ukjs"
