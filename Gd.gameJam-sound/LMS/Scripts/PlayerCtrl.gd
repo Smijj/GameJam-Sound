@@ -121,13 +121,8 @@ func _GetClosestSpeakerDistance() -> float:
 	
 	return closestDistance
 
-var _MusicFadeTween: Tween = null
 func _FadeMusicToNonDiegetic() -> void:
-	if !AudioHandler._MusicAudioPlayer: return
-	if _MusicFadeTween: _MusicFadeTween.kill()
-	_MusicFadeTween = create_tween()
-	_MusicFadeTween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	_MusicFadeTween.tween_property(AudioHandler._MusicAudioPlayer, "volume_db", -5, 0.5).set_ease(Tween.EASE_OUT)
+	AudioHandler.FadeMusicToVolume(0, 0.5)
 
 var _MusicQuietTween: Tween = null
 func _HandleLevelCompleteMusicVolume() -> void:

@@ -3,20 +3,25 @@ extends CanvasLayer
 @export var _LevelInteractablesContainer: GridContainer
 @export var _LevelInteractablePrefab: PackedScene
 
-#var _LevelsResource: LevelsResource = preload("res://Addons/levelmanager/LevelsResource.tres") as LevelsResource
-
-var _Buttons:Array[Button] = []
 var _LevelInteractables: Dictionary[LevelData, LevelInteractable] = {}
 
 func _ready() -> void:
 	_SetupLevelInteractables()
-	visibility_changed.connect(_ReloadInteractables)
+	visibility_changed.connect(_SetupLevelInteractables)
 
 func _SetupLevelInteractables() -> void:
+	for child:Node in _LevelInteractablesContainer.get_children():
+		child.queue_free()
+	_LevelInteractables = {}
+	
 	var levelsResource: LevelsResource = await load("res://Addons/levelmanager/LevelsResource.tres") as LevelsResource
 	if !_LevelInteractablesContainer || levelsResource.Levels.is_empty(): return
 	for levelData:LevelData in levelsResource.Levels:
-		_SetupInteractable(levelData)
+		if !ResourceLoader.exists(LevelManager._GetSavePath(levelData), "LevelData"):
+			print("resource doesnt exist at: ", LevelManager._GetSavePath(levelData))
+			ResourceSaver.save(levelData, LevelManager._GetSavePath(levelData))
+		var loadedLevelData = ResourceLoader.load(LevelManager._GetSavePath(levelData), "LevelData", ResourceLoader.CACHE_MODE_IGNORE_DEEP)
+		_SetupInteractable(loadedLevelData)
 
 func _SetupInteractable(levelData: LevelData):
 	if !_LevelInteractablePrefab: return
@@ -27,14 +32,8 @@ func _SetupInteractable(levelData: LevelData):
 	# Set level select button onClick function
 	levelInteractable.SetButton(levelData.LevelName, func(): LevelManager.LoadLevel(levelData))
 	
-	# Handle Personal Complete Time label's text  
-	if levelData.PersonalCompleteTime != -1:
-		levelInteractable.SetTimeLabel(levelData.PersonalCompleteTime)
-	
-	# Handle Collectables Time label's text  
-	levelInteractable.SetCollectablesLabel(levelData)
-	
 	_LevelInteractables.set(levelData, levelInteractable)
+	_ReloadInteractables()
 
 func _ReloadInteractables() -> void:
 	if visible == false || _LevelInteractables.is_empty(): return

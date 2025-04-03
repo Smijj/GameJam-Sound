@@ -146,3 +146,10 @@ func PlayMusic(music:AudioStream, bus:String = MUSIC_BUS) -> void:
 func TrackFinished() -> void:
 	_CurrentTrack = null
 	CurrentTrackFinished.emit()
+
+var _MusicFadeTween: Tween = null
+func FadeMusicToVolume(volume:float, time:float) -> void:
+	if !_MusicAudioPlayer: return
+	if _MusicFadeTween: _MusicFadeTween.kill()
+	_MusicFadeTween = create_tween()
+	_MusicFadeTween.tween_property(_MusicAudioPlayer, "volume_db", volume, 0.5).set_ease(Tween.EASE_OUT)

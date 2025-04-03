@@ -111,8 +111,8 @@ func _HideLineIndicator() -> void:
 		_LineIndicator.visible = false
 
 func _GetScreenUV() -> Vector2:
-	
-	var screenCoords:Vector2 = get_viewport_transform() * global_position - Vector2(60, 90)
+	var viewportSize: Vector2 = get_viewport_rect().size
+	var screenCoords:Vector2 = get_viewport_transform() * global_position + Vector2(viewportSize.x*0.075, -viewportSize.y*0.075)
 	var normalizedScreenCoords:Vector2 = (screenCoords/get_viewport().get_visible_rect().size)
 	
 	#var ratio: float = get_viewport().get_visible_rect().size.x / get_viewport().get_visible_rect().size.y
