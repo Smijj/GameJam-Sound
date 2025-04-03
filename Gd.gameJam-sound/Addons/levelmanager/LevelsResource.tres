@@ -1,99 +1,18 @@
-[gd_resource type="Resource" script_class="LevelsResource" load_steps=21 format=3 uid="uid://dqyevewr2irt6"]
+[gd_resource type="Resource" script_class="LevelsResource" load_steps=12 format=3 uid="uid://dqyevewr2irt6"]
 
 [ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="1_e8eg2"]
-[ext_resource type="PackedScene" uid="uid://upel8l2op77k" path="res://LMS/Scenes/Levels/Level_0.tscn" id="2_858hk"]
+[ext_resource type="Resource" uid="uid://cih1iob8g8j1c" path="res://Resources/0.tres" id="2_7502i"]
 [ext_resource type="Script" uid="uid://cgg1d75r0ukjs" path="res://Addons/levelmanager/Scripts/LevelsResource.gd" id="2_uds5b"]
-[ext_resource type="PackedScene" uid="uid://dnedfqgi53lgm" path="res://LMS/Scenes/Levels/Level_1.tscn" id="3_0dyit"]
-[ext_resource type="PackedScene" uid="uid://cw6c68yi1ud2k" path="res://LMS/Scenes/Levels/Level_2.tscn" id="4_3krqp"]
-[ext_resource type="PackedScene" uid="uid://dgbkq4c88rh6r" path="res://LMS/Scenes/Levels/Level_3.tscn" id="5_chg41"]
-[ext_resource type="PackedScene" uid="uid://dgt638vbyhkkx" path="res://LMS/Scenes/Levels/Level_4.tscn" id="6_3ap2o"]
-[ext_resource type="PackedScene" uid="uid://c8rers4tw5pu3" path="res://LMS/Scenes/Levels/Level_5.tscn" id="7_tdvqg"]
-[ext_resource type="PackedScene" uid="uid://c5eejd4u1ebxh" path="res://LMS/Scenes/Levels/Level_6.tscn" id="8_0o3p6"]
-[ext_resource type="PackedScene" uid="uid://dgy7k6lpb7aqq" path="res://LMS/Scenes/Levels/Level_7.tscn" id="9_61g6e"]
-[ext_resource type="PackedScene" uid="uid://dvtx10ojuexkb" path="res://LMS/Scenes/Levels/Level_8.tscn" id="10_7502i"]
-
-[sub_resource type="Resource" id="Resource_0dyit"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("2_858hk")
-LevelName = "0"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_3krqp"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("3_0dyit")
-LevelName = "1"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_chg41"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("4_3krqp")
-LevelName = "2"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_3ap2o"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("5_chg41")
-LevelName = "3"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_7502i"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("6_3ap2o")
-LevelName = "4"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_tdvqg"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("7_tdvqg")
-LevelName = "5"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_0o3p6"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("8_0o3p6")
-LevelName = "6"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_61g6e"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("9_61g6e")
-LevelName = "7"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
-
-[sub_resource type="Resource" id="Resource_er788"]
-script = ExtResource("1_e8eg2")
-PackedLevel = ExtResource("10_7502i")
-LevelName = "8"
-Completed = false
-PersonalCompleteTime = -1.0
-Collectables = Dictionary[NodePath, bool]({})
-metadata/_custom_type_script = "uid://rfm1a3uatox8"
+[ext_resource type="Resource" uid="uid://bcskw3nxduifl" path="res://Resources/1.tres" id="3_7502i"]
+[ext_resource type="Resource" uid="uid://bnmmb0qi4fhwq" path="res://Resources/2.tres" id="4_er788"]
+[ext_resource type="Resource" uid="uid://cslqhcs222j08" path="res://Resources/3.tres" id="5_fwhu2"]
+[ext_resource type="Resource" uid="uid://dvo6do8ic6ml2" path="res://Resources/4.tres" id="6_mqmqs"]
+[ext_resource type="Resource" uid="uid://cpnkgirb6cuys" path="res://Resources/5.tres" id="7_ifyp7"]
+[ext_resource type="Resource" uid="uid://ctrr8bfyw2ksd" path="res://Resources/6.tres" id="8_2u4st"]
+[ext_resource type="Resource" uid="uid://cp7dq4o0x1y36" path="res://Resources/7.tres" id="9_hmm8l"]
+[ext_resource type="Resource" uid="uid://172mkhomwv5i" path="res://Resources/8.tres" id="10_ear2u"]
 
 [resource]
 script = ExtResource("2_uds5b")
-Levels = Array[ExtResource("1_e8eg2")]([SubResource("Resource_0dyit"), SubResource("Resource_3krqp"), SubResource("Resource_chg41"), SubResource("Resource_3ap2o"), SubResource("Resource_7502i"), SubResource("Resource_tdvqg"), SubResource("Resource_0o3p6"), SubResource("Resource_61g6e"), SubResource("Resource_er788")])
+Levels = Array[ExtResource("1_e8eg2")]([ExtResource("2_7502i"), ExtResource("3_7502i"), ExtResource("4_er788"), ExtResource("5_fwhu2"), ExtResource("6_mqmqs"), ExtResource("7_ifyp7"), ExtResource("8_2u4st"), ExtResource("9_hmm8l"), ExtResource("10_ear2u")])
 metadata/_custom_type_script = "uid://cgg1d75r0ukjs"

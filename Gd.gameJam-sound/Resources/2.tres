@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://bnmmb0qi4fhwq"]
+
+[ext_resource type="PackedScene" uid="uid://cw6c68yi1ud2k" path="res://LMS/Scenes/Levels/Level_2.tscn" id="1_a3ml5"]
+[ext_resource type="Script" uid="uid://rfm1a3uatox8" path="res://Addons/levelmanager/Scripts/LevelDataResource.gd" id="2_xkju7"]
+
+[resource]
+script = ExtResource("2_xkju7")
+PackedLevel = ExtResource("1_a3ml5")
+LevelName = "2"
+Completed = false
+PersonalCompleteTime = -1.0
+Collectables = Dictionary[NodePath, bool]({})
+metadata/_custom_type_script = "uid://rfm1a3uatox8"
